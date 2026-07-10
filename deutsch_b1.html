@@ -1524,19 +1524,24 @@ async function startLesen(teil) {
         messages: [{ role: 'user', content: userMsg }]
       })
     });
+    console.log('API status:', res.status);
     const data = await res.json();
+    console.log('API response:', JSON.stringify(data).slice(0, 300));
     if (data.error) throw new Error(data.error.message);
     const raw = data.content[0].text.trim().replace(/^```json\s*|^```\s*|```\s*$/gm, '').trim();
+    console.log('Raw text (first 300):', raw.slice(0, 300));
     let parsed;
     try {
       parsed = JSON.parse(raw);
+      console.log('Parsed OK, keys:', Object.keys(parsed));
     } catch(parseErr) {
-      // Try to extract JSON object from response
+      console.log('Parse failed, trying regex extract...');
       const match = raw.match(/\{[\s\S]*\}/);
       if (match) {
         parsed = JSON.parse(match[0]);
+        console.log('Regex extract OK');
       } else {
-        throw new Error('JSON 解析失敗：' + parseErr.message + '\n回傳內容前100字：' + raw.slice(0, 100));
+        throw new Error('JSON 解析失敗：' + parseErr.message + '\n回傳前100字：' + raw.slice(0, 100));
       }
     }
     lesenData = parsed;
