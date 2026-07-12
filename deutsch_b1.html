@@ -963,6 +963,394 @@
     font-weight: 600;
   }
 
+  /* ── SCHREIBEN AUFGABE ── */
+  .aufgabe-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow);
+  }
+  .aufgabe-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .aufgabe-chip {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--accent-light);
+    color: var(--accent);
+  }
+  .aufgabe-situation {
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .aufgabe-punkte { margin: 0 0 14px 0; padding: 0; list-style: none; }
+  .aufgabe-punkte li {
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 4px 0 4px 20px;
+    position: relative;
+  }
+  .aufgabe-punkte li::before {
+    content: '–';
+    position: absolute;
+    left: 4px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .aufgabe-hinweis {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.6;
+    border-top: 1px dashed var(--rule);
+    padding-top: 10px;
+  }
+
+  /* guestbook (Teil 2) */
+  .gaestebuch {
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 14px 0;
+    background: #FDFDFB;
+  }
+  .gb-urlbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: var(--paper-dark);
+    border-bottom: 1px solid var(--rule);
+  }
+  .gb-dots { display: flex; gap: 4px; }
+  .gb-dot { width: 9px; height: 9px; border-radius: 50%; background: #C9C2B4; }
+  .gb-url {
+    flex: 1;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    font-size: 11px;
+    font-family: var(--f-mono);
+    color: var(--ink-light);
+    padding: 3px 12px;
+  }
+  .gb-header {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-family: var(--f-display);
+    font-style: italic;
+    font-size: 15px;
+    padding: 5px 18px;
+    margin: 12px 0 0 12px;
+    border-radius: 3px 3px 0 0;
+  }
+  .gb-body { padding: 12px 16px 16px; }
+  .gb-time { font-size: 11px; color: var(--ink-light); margin-bottom: 4px; }
+  .gb-comment {
+    display: flex;
+    gap: 14px;
+    background: var(--accent-light);
+    padding: 12px 14px;
+    border-radius: 6px;
+  }
+  .gb-name { font-weight: 700; font-size: 13px; min-width: 60px; }
+  .gb-text { font-size: 13.5px; line-height: 1.7; }
+
+  /* ── WORTSCHATZ ── */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .cat-card {
+    background: var(--white);
+    border: 1.5px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .cat-card:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+  .cat-icon { font-size: 24px; }
+  .cat-de { font-weight: 600; font-size: 14px; }
+  .cat-zh { font-size: 12px; color: var(--ink-light); }
+  .cat-count { font-size: 11px; color: var(--ink-light); margin-top: 4px; }
+  .cat-bar {
+    height: 5px;
+    background: var(--paper-dark);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .cat-bar-fill { height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.3s; }
+  .cat-levels { display: flex; gap: 4px; }
+  .cat-level {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 7px;
+    border-radius: 3px;
+    background: var(--paper-dark);
+    color: var(--ink-light);
+  }
+  .cat-cta {
+    margin-top: 8px;
+    padding: 7px;
+    background: var(--ink);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: var(--f-body);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.15s;
+  }
+  .cat-cta:hover { background: var(--accent); }
+  .cat-cta.secondary { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+
+  /* flashcard */
+  .flash-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .flash-counter { font-family: var(--f-display); font-size: 18px; }
+  .flash-dots { display: flex; gap: 5px; }
+  .flash-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--paper-dark);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .flash-dot.seen { background: var(--accent); opacity: 0.4; }
+  .flash-dot.current { background: var(--accent); opacity: 1; transform: scale(1.3); }
+
+  .flash-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 14px;
+  }
+  .flash-word-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .flash-word { font-family: var(--f-display); font-size: 34px; color: var(--ink); }
+  .flash-article { font-family: var(--f-display); font-size: 24px; color: var(--accent); }
+  .flash-actions { margin-left: auto; display: flex; gap: 8px; }
+  .flash-action-btn {
+    background: transparent;
+    border: 1.5px solid var(--rule);
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 4px 10px;
+    transition: all 0.15s;
+  }
+  .flash-action-btn:hover { border-color: var(--accent); }
+  .flash-action-btn.on { background: var(--accent-light); border-color: var(--accent); }
+  .flash-meaning { font-size: 17px; margin: 6px 0 2px; }
+  .flash-meaning-en { font-size: 13px; color: var(--ink-light); }
+  .flash-chips { display: flex; gap: 6px; margin: 10px 0 14px; flex-wrap: wrap; }
+  .flash-grammar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    margin-bottom: 14px;
+  }
+  .fg-item { font-size: 12.5px; }
+  .fg-label { color: var(--ink-light); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .fg-value { font-weight: 600; font-family: var(--f-mono); font-size: 12.5px; }
+  .flash-section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 12px 0 6px;
+  }
+  .flash-example { font-size: 14px; line-height: 1.7; padding: 3px 0; }
+  .flash-colloc { font-size: 13px; font-family: var(--f-mono); color: var(--ink); padding: 2px 0; }
+  .flash-tip {
+    background: #FFF8E7;
+    border-left: 3px solid #E0A800;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    padding: 8px 12px;
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+  .flash-more-btn {
+    margin-top: 12px;
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    font-family: var(--f-body);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+  }
+  .flash-more { display: none; margin-top: 10px; font-size: 13px; line-height: 1.7; color: var(--ink); }
+  .flash-more.open { display: block; }
+
+  .flash-familiar-row { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+  .familiar-btn {
+    flex: 1;
+    min-width: 90px;
+    padding: 10px;
+    border-radius: var(--radius);
+    border: 1.5px solid var(--rule);
+    background: var(--white);
+    font-family: var(--f-body);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .familiar-btn:hover { border-color: var(--accent); }
+  .familiar-btn.sel-low { background: var(--red-light); border-color: var(--red); color: var(--red); }
+  .familiar-btn.sel-mid { background: #FFF8E7; border-color: #E0A800; color: #9C7400; }
+  .familiar-btn.sel-high { background: var(--green-light); border-color: var(--green); color: var(--green); }
+
+  .flash-nav { display: flex; gap: 10px; justify-content: space-between; }
+
+  /* question view (practice/test) */
+  .ws-q-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    margin-bottom: 14px;
+  }
+  .ws-q-type {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 10px;
+    background: var(--paper-dark);
+    color: var(--ink-light);
+    margin-bottom: 10px;
+  }
+  .ws-q-prompt { font-size: 16px; line-height: 1.7; margin-bottom: 16px; }
+  .ws-q-prompt .blank {
+    display: inline-block;
+    min-width: 70px;
+    border-bottom: 2px solid var(--accent);
+    text-align: center;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .ws-text-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid var(--rule);
+    border-radius: var(--radius);
+    font-family: var(--f-body);
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 8px;
+  }
+  .ws-text-input:focus { border-color: var(--accent); }
+  .ws-feedback {
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    font-size: 13.5px;
+    line-height: 1.7;
+    margin-top: 12px;
+  }
+  .ws-feedback.right { background: var(--green-light); border-left: 3px solid var(--green); }
+  .ws-feedback.wrong { background: var(--red-light); border-left: 3px solid var(--red); }
+  .ws-progress-bar {
+    height: 6px;
+    background: var(--paper-dark);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .ws-progress-fill { height: 100%; background: var(--accent); transition: width 0.3s; }
+
+  /* stats / dashboard */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .stat-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+  }
+  .stat-num { font-family: var(--f-display); font-size: 24px; color: var(--ink); }
+  .stat-label { font-size: 11.5px; color: var(--ink-light); margin-top: 2px; }
+  .weak-tag-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 14px;
+    border: 1.5px solid var(--red);
+    background: var(--red-light);
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 3px 4px 3px 0;
+    font-family: var(--f-body);
+  }
+  .weak-tag-btn.amber { border-color: #E0A800; background: #FFF8E7; color: #9C7400; }
+  .ws-word-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .ws-word-row:hover { border-color: var(--accent); }
+  .ws-mastery-bar {
+    width: 70px;
+    height: 6px;
+    background: var(--paper-dark);
+    border-radius: 3px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  @media (max-width: 680px) {
+    .cat-grid { grid-template-columns: 1fr 1fr; }
+    .flash-word { font-size: 26px; }
+    .flash-card { padding: 18px; }
+  }
+  @media (max-width: 420px) {
+    .cat-grid { grid-template-columns: 1fr; }
+  }
+
   /* ── ERROR TOAST ── */
   .toast {
     position: fixed;
@@ -1034,6 +1422,10 @@
       <div class="weakness-title">📌 需要加強</div>
       <div id="weaknessTags"><span style="font-size:12px;color:#C0392B;">暫無資料</span></div>
     </div>
+    <div class="weakness-box" id="dueBox" style="background:var(--accent-light);border-left-color:var(--accent)">
+      <div class="weakness-title" style="color:var(--accent)">📅 待複習單字</div>
+      <div id="dueWords" style="font-size:12px;color:var(--ink-light)">暫無資料</div>
+    </div>
   </nav>
 
   <!-- MAIN -->
@@ -1043,56 +1435,89 @@
     <div class="panel active" id="panel-schreiben">
       <div class="panel-header">
         <div class="panel-title">Schreiben</div>
-        <div class="panel-sub">AI 出題 · 即時批改 · 文法解釋</div>
+        <div class="panel-sub">Goethe B1 三大題型 · AI 出題 · 即時批改</div>
       </div>
 
-      <div class="mode-toggle">
-        <button class="mode-btn active" id="modeQuick" onclick="setMode('quick')">⚡ 快速（10 分）</button>
-        <button class="mode-btn" id="modeDeep" onclick="setMode('deep')">🎯 深入（30 分）</button>
-      </div>
-
-      <!-- PROMPT -->
-      <div class="prompt-card" id="promptCard">
-        <div class="prompt-label">今日題目</div>
-        <div class="prompt-text" id="promptText">
-          按「換題目」讓 AI 給你一道新題目。
+      <!-- TEIL SELECTOR -->
+      <div id="schreibSelector">
+        <div class="teil-intro">請選擇練習的題型：</div>
+        <div class="teil-cards">
+          <div class="teil-card" onclick="startSchreiben('teil1')">
+            <div class="teil-num">Teil 1</div>
+            <div class="teil-name">E-Mail an eine Freundin / einen Freund</div>
+            <div class="teil-desc">非正式 Email，約 80 字，需涵蓋 3 個內容點（描述、說明理由、提出建議）</div>
+            <div class="teil-time">⏱ 20 分鐘 · ca. 80 Wörter</div>
+          </div>
+          <div class="teil-card" onclick="startSchreiben('teil2')">
+            <div class="teil-num">Teil 2</div>
+            <div class="teil-name">Meinung äußern（論壇留言）</div>
+            <div class="teil-desc">閱讀網路留言板上的評論，寫下你的意見，約 80 字</div>
+            <div class="teil-time">⏱ 25 分鐘 · ca. 80 Wörter</div>
+          </div>
+          <div class="teil-card" onclick="startSchreiben('teil3')">
+            <div class="teil-num">Teil 3</div>
+            <div class="teil-name">Formelle E-Mail（正式信件）</div>
+            <div class="teil-desc">寫給老師／主管的正式短信，約 40 字，注意稱謂與結尾問候</div>
+            <div class="teil-time">⏱ 15 分鐘 · ca. 40 Wörter</div>
+          </div>
         </div>
-        <div class="prompt-tags" id="promptTags"></div>
-        <button class="new-topic-btn" id="newTopicBtn" onclick="generatePrompt()">
-          🎲 換題目
-        </button>
       </div>
 
-      <!-- WRITE AREA -->
-      <div class="write-area">
-        <textarea id="userText" placeholder="在這裡寫你的德文作答…&#10;&#10;提示：先不要管錯誤，把想法寫出來再說。" oninput="updateWordCount()"></textarea>
-      </div>
-      <div class="write-footer">
-        <div class="word-count">字數：<span id="wordCount">0</span> 個詞</div>
-        <button class="submit-btn" id="submitBtn" onclick="submitWriting()">
-          批改 →
-        </button>
+      <!-- LOADING (generation) -->
+      <div class="lesen-loading" id="schreibLoading">
+        <div class="spinner" style="width:24px;height:24px;border-width:3px"></div>
+        <div class="lesen-loading-text">AI 正在出題，請稍候…</div>
       </div>
 
-      <!-- LOADING -->
-      <div class="loading-bar" id="loadingBar">
-        <div class="spinner"></div>
-        <span id="loadingText">AI 正在批改你的作文…</span>
-      </div>
-
-      <!-- FEEDBACK -->
-      <div class="feedback-card" id="feedbackCard">
-        <div class="feedback-header">
-          <div class="feedback-title">批改結果</div>
-          <div class="score-badge" id="scoreBadge"></div>
+      <!-- EXERCISE -->
+      <div id="schreibExercise" style="display:none">
+        <div class="lesen-ex-header">
+          <div>
+            <div class="lesen-ex-title" id="schreibExTitle"></div>
+            <div class="lesen-ex-meta" id="schreibExMeta"></div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <div class="lesen-timer" id="schreibTimer"></div>
+            <button class="next-btn secondary" onclick="showSchreibSelector()" style="font-size:12px;padding:6px 12px">← 換題型</button>
+          </div>
         </div>
-        <div class="feedback-body">
-          <div class="corrected-text" id="correctedText"></div>
-          <div class="grammar-notes" id="grammarNotes"></div>
-          <div class="feedback-summary" id="feedbackSummary"></div>
-          <div class="next-row">
-            <button class="next-btn primary" onclick="generatePrompt(); resetWriting()">✍️ 下一題</button>
-            <button class="next-btn secondary" onclick="resetWriting()">修改這篇</button>
+
+        <!-- AUFGABE -->
+        <div id="aufgabeCard"></div>
+
+        <!-- WRITE AREA -->
+        <div class="write-area">
+          <textarea id="userText" placeholder="在這裡寫你的德文作答…&#10;&#10;提示：先不要管錯誤，把想法寫出來再說。" oninput="updateWordCount()"></textarea>
+        </div>
+        <div class="write-footer">
+          <div class="word-count">字數：<span id="wordCount">0</span> 個詞 <span id="wordTarget" style="color:var(--ink-light)"></span></div>
+          <button class="submit-btn" id="submitBtn" onclick="submitWriting()">
+            批改 →
+          </button>
+        </div>
+
+        <!-- LOADING (grading) -->
+        <div class="loading-bar" id="loadingBar">
+          <div class="spinner"></div>
+          <span id="loadingText">AI 正在批改你的作文…</span>
+        </div>
+
+        <!-- FEEDBACK -->
+        <div class="feedback-card" id="feedbackCard">
+          <div class="feedback-header">
+            <div class="feedback-title">批改結果</div>
+            <div class="score-badge" id="scoreBadge"></div>
+          </div>
+          <div class="feedback-body">
+            <div id="inhaltCheck"></div>
+            <div class="corrected-text" id="correctedText"></div>
+            <div class="grammar-notes" id="grammarNotes"></div>
+            <div class="feedback-summary" id="feedbackSummary"></div>
+            <div class="next-row">
+              <button class="next-btn primary" onclick="startSchreiben(currentSchreibTeil)">✍️ 下一題</button>
+              <button class="next-btn secondary" onclick="resetWriting()">修改這篇</button>
+              <button class="next-btn secondary" onclick="showSchreibSelector()">換題型</button>
+            </div>
           </div>
         </div>
       </div>
@@ -1102,13 +1527,14 @@
     <div class="panel" id="panel-wortschatz">
       <div class="panel-header">
         <div class="panel-title">Wortschatz</div>
-        <div class="panel-sub">B1 核心單字 · 間隔記憶</div>
+        <div class="panel-sub">主題學習 · 高頻單字 · 錯題複習</div>
       </div>
-      <div class="wortschatz-placeholder">
-        <div class="placeholder-icon">🃏</div>
-        <div class="placeholder-text">單字模組</div>
-        <div class="placeholder-sub">即將推出 — 先去練寫作吧！</div>
+      <div class="mode-toggle" id="wsModeTabs">
+        <button class="mode-btn active" id="wsTabLearn" onclick="wsSetMode('learn')">主題學習</button>
+        <button class="mode-btn" id="wsTabToday" onclick="wsSetMode('today')">今日複習</button>
+        <button class="mode-btn" id="wsTabWeak" onclick="wsSetMode('weak')">我的弱點</button>
       </div>
+      <div id="wsContent"></div>
     </div>
 
     <!-- LESEN PANEL -->
@@ -1215,17 +1641,17 @@
 
 <script>
 // ── STATE ──
-let apiKey = localStorage.getItem('de_api_key') || '';
-let currentMode = 'quick';
-let currentPrompt = '';
-let weaknesses = JSON.parse(localStorage.getItem('de_weaknesses') || '[]');
-let streak = parseInt(localStorage.getItem('de_streak') || '1');
+var apiKey = localStorage.getItem('de_api_key') || '';
+var currentMode = 'quick';
+var currentPrompt = '';
+var weaknesses = JSON.parse(localStorage.getItem('de_weaknesses') || '[]');
+var streak = parseInt(localStorage.getItem('de_streak') || '1');
 
 // ── INIT ──
 document.getElementById('streakNum').textContent = streak;
 renderWeaknesses();
 if (!apiKey) showApiModal();
-else generatePrompt();
+else document.getElementById('apiModal').classList.add('hidden');
 
 // ── API KEY ──
 function showApiModal() {
@@ -1238,7 +1664,26 @@ function saveApiKey() {
   apiKey = val;
   localStorage.setItem('de_api_key', val);
   document.getElementById('apiModal').classList.add('hidden');
-  if (!currentPrompt) generatePrompt();
+}
+
+// ── SHARED API HELPER ──
+async function callClaude(userMsg, maxTokens) {
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+    body: JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: maxTokens || 2000, messages: [{ role: 'user', content: userMsg }] })
+  });
+  const data = await res.json();
+  if (data.error) throw new Error(data.error.message);
+  let raw = data.content[0].text.trim().replace(/^```json\s*|^```\s*|```\s*$/gm, '').trim();
+  try { return JSON.parse(raw); } catch(e1) {
+    const match = raw.match(/\{[\s\S]*\}/);
+    if (!match) throw new Error('JSON 解析失敗：找不到 JSON 物件');
+    try { return JSON.parse(match[0]); } catch(e2) {
+      const repaired = match[0].replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '').replace(/,\s*([}\]])/g, '$1');
+      return JSON.parse(repaired);
+    }
+  }
 }
 
 // ── PANEL SWITCH ──
@@ -1247,13 +1692,7 @@ function switchPanel(name, el) {
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   document.getElementById('panel-' + name).classList.add('active');
   el.classList.add('active');
-}
-
-// ── MODE ──
-function setMode(m) {
-  currentMode = m;
-  document.getElementById('modeQuick').classList.toggle('active', m === 'quick');
-  document.getElementById('modeDeep').classList.toggle('active', m === 'deep');
+  if (name === 'wortschatz' && !wsInited) { wsInited = true; wsSetMode('learn'); }
 }
 
 // ── WORD COUNT ──
@@ -1263,52 +1702,119 @@ function updateWordCount() {
   document.getElementById('wordCount').textContent = count;
 }
 
-// ── GENERATE PROMPT ──
-async function generatePrompt() {
+// ════════════════════════════════════════
+// SCHREIBEN MODULE (Goethe B1 Teil 1/2/3)
+// ════════════════════════════════════════
+var currentSchreibTeil = null;
+var schreibAufgabe = null;
+
+const SCHREIB_META = {
+  teil1: { title: 'Teil 1 — E-Mail an eine Freundin / einen Freund', min: 20, words: 80 },
+  teil2: { title: 'Teil 2 — Meinung äußern', min: 25, words: 80 },
+  teil3: { title: 'Teil 3 — Formelle E-Mail', min: 15, words: 40 }
+};
+
+const SCHREIB_SCHEMAS = {
+  teil1: `你是 Goethe-Zertifikat B1「Schreiben Teil 1」命題人。請出一道非正式 Email 題目。
+格式範例（仿真題）：朋友 Carsten 因意外骨折住院，你昨天去探望他，現在寫信給另一位也認識 Carsten 的朋友。
+要求：情境貼近日常（生病、搬家、慶祝、旅行計畫、遺失物品等），3 個內容點依序為「Beschreiben Sie（描述）」「Begründen Sie（說明理由）」「Machen Sie einen Vorschlag（提出建議）」。
+只輸出 JSON（不要圍欄）：
+{"situation":"德文情境說明2-3句","punkte":["Beschreiben Sie: …?","Begründen Sie: …?","Machen Sie einen Vorschlag für …."],"situation_zh":"情境的繁體中文翻譯"}`,
+  teil2: `你是 Goethe-Zertifikat B1「Schreiben Teil 2」命題人。請出一道表達意見的題目。
+格式：受試者在電視上看了某主題的紀錄片，然後在節目的線上留言板（Gästebuch）看到一則評論，要寫下自己的意見（ca. 80 Wörter）。
+主題須有正反空間（例：Gewalt im Fernsehen、Handys in der Schule、Online-Einkaufen、Fast Food、Soziale Medien）。
+只輸出 JSON（不要圍欄）：
+{"thema":"主題（德文）","intro":"Sie haben im Fernsehen eine Dokumentarsendung zum Thema „…" gesehen. Im Online-Gästebuch der Sendung lesen Sie folgenden Kommentar:","url":"www.report-xxx.de","kommentar":{"name":"名字","zeit":"24.06. 19.25 Uhr","text":"50-70字的德文評論，有明確立場並以問句結尾"},"intro_zh":"情境的繁體中文說明"}`,
+  teil3: `你是 Goethe-Zertifikat B1「Schreiben Teil 3」命題人。請出一道正式 Email 題目。
+格式範例（仿真題）：老師 Herr Möller 邀請你參加八月的國際戲劇聚會，但你那個時間不能參加。寫信給 Herr Möller：致謝、禮貌地致歉、說明你為什麼不能參加。
+要求：對象是老師／主管／房東／課程負責人等，需要正式稱謂（Sehr geehrte/r …）與結尾問候（Mit freundlichen Grüßen）。
+只輸出 JSON（不要圍欄）：
+{"situation":"德文情境說明2句","aufgabe":"Schreiben Sie an … . Bedanken Sie sich, entschuldigen Sie sich höflich und berichten Sie, warum ….","empfaenger":"Herrn Möller 之類的稱呼","situation_zh":"情境的繁體中文翻譯"}`
+};
+
+function showSchreibSelector() {
+  stopTimer('schreibTimer');
+  document.getElementById('schreibSelector').style.display = '';
+  document.getElementById('schreibLoading').classList.remove('visible');
+  document.getElementById('schreibExercise').style.display = 'none';
+}
+
+async function startSchreiben(teil) {
   if (!apiKey) { showApiModal(); return; }
-  const btn = document.getElementById('newTopicBtn');
-  btn.disabled = true;
-  btn.textContent = '⏳ 生成中…';
-
-  const modeNote = currentMode === 'quick'
-    ? '短題目，要求寫 5-8 句即可'
-    : '需要寫較長段落（至少 120 字）的題目';
-
-  const weakStr = weaknesses.length
-    ? `盡量讓題目需要用到以下文法：${weaknesses.slice(-3).join('、')}`
-    : '覆蓋 B1 常見句型如 weil/obwohl/wenn 從句或 Konjunktiv II';
-
-  const systemPrompt = `你是 Goethe-Institut B1 德語寫作考官。
-請出一道 B1 程度的德文寫作題目（${modeNote}）。
-題目用繁體中文說明情境，但作答必須是德文。
-${weakStr}。
-只輸出以下 JSON，不要其他文字：
-{"prompt":"題目說明","tags":["文法點1","文法點2"],"minWords":${currentMode==='quick'?30:80}}`;
+  currentSchreibTeil = teil;
+  document.getElementById('schreibSelector').style.display = 'none';
+  document.getElementById('schreibExercise').style.display = 'none';
+  document.getElementById('schreibLoading').classList.add('visible');
+  document.getElementById('feedbackCard').classList.remove('visible');
 
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-6',
-        max_tokens: 400,
-        messages: [{ role: 'user', content: systemPrompt }]
-      })
-    });
-    const data = await res.json();
-    if (data.error) throw new Error(data.error.message);
-    const raw = data.content[0].text.trim().replace(/```json|```/g,'').trim();
-    const parsed = JSON.parse(raw);
-    currentPrompt = parsed.prompt;
-    document.getElementById('promptText').textContent = parsed.prompt;
-    const tagsEl = document.getElementById('promptTags');
-    tagsEl.innerHTML = parsed.tags.map(t => `<span class="prompt-tag">${t}</span>`).join('');
+    const weakStr = weaknesses.length ? `\n如可能，設計讓學生需要用到這些文法的情境：${weaknesses.slice(-3).join('、')}` : '';
+    schreibAufgabe = await callClaude(SCHREIB_SCHEMAS[teil] + weakStr, 800);
+    document.getElementById('schreibLoading').classList.remove('visible');
+    renderAufgabe(teil, schreibAufgabe);
   } catch(e) {
+    document.getElementById('schreibLoading').classList.remove('visible');
+    showSchreibSelector();
     showToast('出題失敗：' + e.message);
-  } finally {
-    btn.disabled = false;
-    btn.innerHTML = '🎲 換題目';
   }
+}
+
+function renderAufgabe(teil, a) {
+  const meta = SCHREIB_META[teil];
+  document.getElementById('schreibExTitle').textContent = meta.title;
+  document.getElementById('schreibExMeta').textContent = `Arbeitszeit: ${meta.min} Minuten · ca. ${meta.words} Wörter`;
+  document.getElementById('wordTarget').textContent = `/ 目標 ca. ${meta.words}`;
+  startTimer('schreibTimer', meta.min * 60);
+
+  const card = document.getElementById('aufgabeCard');
+  let html = `<div class="aufgabe-card">
+    <div class="aufgabe-meta">
+      <span class="aufgabe-chip">⏱ ${meta.min} Minuten</span>
+      <span class="aufgabe-chip">✍️ ca. ${meta.words} Wörter</span>
+    </div>`;
+
+  if (teil === 'teil1') {
+    html += `<div class="aufgabe-situation">${a.situation}</div>
+      <ul class="aufgabe-punkte">${(a.punkte||[]).map(p => `<li>${p}</li>`).join('')}</ul>
+      <div class="aufgabe-hinweis">
+        Schreiben Sie eine E-Mail (ca. 80 Wörter).<br>
+        Schreiben Sie etwas zu allen drei Punkten.<br>
+        Achten Sie auf den Textaufbau (Anrede, Einleitung, Reihenfolge der Inhaltspunkte, Schluss).
+        ${a.situation_zh ? `<br><br>💡 ${a.situation_zh}` : ''}
+      </div>`;
+  } else if (teil === 'teil2') {
+    const k = a.kommentar || {};
+    html += `<div class="aufgabe-situation">${a.intro || ''}</div>
+      <div class="gaestebuch">
+        <div class="gb-urlbar">
+          <div class="gb-dots"><span class="gb-dot"></span><span class="gb-dot"></span><span class="gb-dot"></span></div>
+          <div class="gb-url">${a.url || 'www.report-online.de'}</div>
+        </div>
+        <div class="gb-header">Gästebuch</div>
+        <div class="gb-body">
+          <div class="gb-time">${k.zeit || ''}</div>
+          <div class="gb-comment">
+            <div class="gb-name">${k.name || ''}</div>
+            <div class="gb-text">${k.text || ''}</div>
+          </div>
+        </div>
+      </div>
+      <div class="aufgabe-hinweis">
+        Schreiben Sie nun Ihre Meinung (ca. 80 Wörter).
+        ${a.intro_zh ? `<br><br>💡 ${a.intro_zh}` : ''}
+      </div>`;
+  } else {
+    html += `<div class="aufgabe-situation">${a.situation}</div>
+      <div style="font-size:14px;line-height:1.7;margin-bottom:14px">${a.aufgabe || ''}</div>
+      <div class="aufgabe-hinweis">
+        Schreiben Sie eine E-Mail (ca. 40 Wörter). Vergessen Sie nicht die Anrede und den Gruß am Schluss.
+        ${a.situation_zh ? `<br><br>💡 ${a.situation_zh}` : ''}
+      </div>`;
+  }
+  card.innerHTML = html + '</div>';
+  document.getElementById('userText').value = '';
+  document.getElementById('wordCount').textContent = '0';
+  document.getElementById('schreibExercise').style.display = '';
 }
 
 // ── SUBMIT & GRADE ──
@@ -1316,48 +1822,41 @@ async function submitWriting() {
   if (!apiKey) { showApiModal(); return; }
   const text = document.getElementById('userText').value.trim();
   if (!text || text.length < 10) { showToast('請先寫幾句德文！'); return; }
-  if (!currentPrompt) { showToast('請先按「換題目」取得題目'); return; }
+  if (!schreibAufgabe) { showToast('請先選擇題型取得題目'); return; }
 
   setLoading(true, 'AI 正在批改你的作文…');
   document.getElementById('feedbackCard').classList.remove('visible');
 
-  const systemPrompt = `你是嚴格但友善的 Goethe B1 德文老師。
-請批改學生的德文作文。
+  const teil = currentSchreibTeil;
+  const meta = SCHREIB_META[teil];
+  const kriterien = {
+    teil1: '這是非正式 Email。評分須檢查：(1) 三個內容點是否全部處理 (2) 結構：Anrede（如 Liebe/Lieber…）、Einleitung、內容順序、Schluss (3) 語言正確性。',
+    teil2: '這是表達意見的留言。評分須檢查：(1) 是否明確表達自己的立場 (2) 是否有理由支持（weil/denn/deshalb）(3) 是否回應了原評論的觀點 (4) 語言正確性。',
+    teil3: '這是正式 Email。評分須檢查：(1) 正式稱謂（Sehr geehrte/r Herr/Frau …）(2) 致謝、道歉、說明理由三個功能是否完成 (3) 結尾問候（Mit freundlichen Grüßen）(4) 是否使用敬稱 Sie (5) 語言正確性。'
+  };
 
-題目：${currentPrompt}
-學生作文：${text}
+  const prompt = `你是嚴格但友善的 Goethe B1 德文寫作考官。請按照 Goethe 官方標準批改。
 
-請輸出以下 JSON 格式（不要其他文字）：
+題型：${meta.title}（目標 ca. ${meta.words} Wörter）
+題目內容：${JSON.stringify(schreibAufgabe)}
+${kriterien[teil]}
+
+學生作文：
+${text}
+
+只輸出以下 JSON（不要圍欄不要其他文字）：
 {
   "score": "gut/ok/needs_work",
   "scoreLabel": "一句話總評（繁體中文）",
-  "errors": [
-    {
-      "wrong": "學生寫的錯誤詞/句",
-      "correct": "正確版本",
-      "rule": "文法規則解釋（繁體中文，清楚說明規則，舉例）",
-      "grammarTag": "錯誤類型標籤，例如：Perfekt助動詞、格位變化"
-    }
-  ],
+  "inhaltspunkte": [{"punkt":"內容點/結構要求（簡短）","erfuellt":true,"kommentar":"一句中文說明"}],
+  "errors": [{"wrong":"學生寫的錯誤原文","correct":"正確版本","rule":"文法規則解釋（繁體中文，含例句）","grammarTag":"錯誤類型標籤"}],
   "goodPoints": "寫得好的地方（繁體中文）",
   "overallAdvice": "整體改進建議（繁體中文）"
 }
-最多回報 4 個最重要的錯誤。如果沒有錯誤，errors 為空陣列。`;
+inhaltspunkte 要涵蓋該題型的所有評分要求（內容點與結構）。errors 最多 5 個最重要的錯誤，沒有錯誤則為空陣列。`;
 
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-6',
-        max_tokens: 1000,
-        messages: [{ role: 'user', content: systemPrompt }]
-      })
-    });
-    const data = await res.json();
-    if (data.error) throw new Error(data.error.message);
-    const raw = data.content[0].text.trim().replace(/```json|```/g,'').trim();
-    const result = JSON.parse(raw);
+    const result = await callClaude(prompt, 1600);
     renderFeedback(result, text);
   } catch(e) {
     showToast('批改失敗：' + e.message);
@@ -1368,14 +1867,23 @@ async function submitWriting() {
 
 // ── RENDER FEEDBACK ──
 function renderFeedback(result, originalText) {
-  // score badge
   const scoreColors = { gut: '#2D7A4F', ok: '#B7791F', needs_work: '#C0392B' };
   const scoreEmoji  = { gut: '✅', ok: '〜', needs_work: '⚠️' };
   document.getElementById('scoreBadge').innerHTML =
     `<span class="score-dot" style="background:${scoreColors[result.score]||'#888'}"></span>
      ${scoreEmoji[result.score]||''} ${result.scoreLabel}`;
 
-  // highlight errors in text
+  // content-point checklist
+  const inhaltEl = document.getElementById('inhaltCheck');
+  if (result.inhaltspunkte && result.inhaltspunkte.length) {
+    inhaltEl.innerHTML = `<div class="feedback-summary-label" style="margin-bottom:8px">📋 內容點檢查</div>` +
+      result.inhaltspunkte.map(p => `
+        <div style="display:flex;gap:8px;align-items:flex-start;padding:4px 0;font-size:13.5px">
+          <span style="flex-shrink:0">${p.erfuellt ? '✅' : '❌'}</span>
+          <span><strong>${p.punkt}</strong>${p.kommentar ? ' — ' + p.kommentar : ''}</span>
+        </div>`).join('') + '<div style="height:14px"></div>';
+  } else inhaltEl.innerHTML = '';
+
   let marked = originalText;
   if (result.errors && result.errors.length) {
     result.errors.forEach(e => {
@@ -1388,7 +1896,6 @@ function renderFeedback(result, originalText) {
   }
   document.getElementById('correctedText').innerHTML = marked;
 
-  // grammar notes
   const notesEl = document.getElementById('grammarNotes');
   if (!result.errors || result.errors.length === 0) {
     notesEl.innerHTML = `<div class="grammar-note ok"><div class="note-rule">✅ 沒有發現明顯文法錯誤，很棒！</div></div>`;
@@ -1399,8 +1906,6 @@ function renderFeedback(result, originalText) {
         <div class="note-correct">✓ ${e.correct}</div>
         <div class="note-rule">${e.rule}</div>
       </div>`).join('');
-
-    // track weaknesses
     result.errors.forEach(e => {
       if (e.grammarTag && !weaknesses.includes(e.grammarTag)) {
         weaknesses.push(e.grammarTag);
@@ -1411,7 +1916,6 @@ function renderFeedback(result, originalText) {
     renderWeaknesses();
   }
 
-  // summary
   let summaryHTML = '';
   if (result.goodPoints) summaryHTML += `<div class="feedback-summary-label">👍 優點</div><p>${result.goodPoints}</p>`;
   if (result.overallAdvice) summaryHTML += `<div class="feedback-summary-label" style="margin-top:12px">💡 建議</div><p>${result.overallAdvice}</p>`;
@@ -1423,10 +1927,22 @@ function renderFeedback(result, originalText) {
 
 // ── RESET ──
 function resetWriting() {
-  document.getElementById('userText').value = '';
-  document.getElementById('wordCount').textContent = '0';
   document.getElementById('feedbackCard').classList.remove('visible');
   document.getElementById('userText').focus();
+}
+
+// ── GENERIC TIMER ──
+const _timers = {};
+function startTimer(elId, totalSec) {
+  stopTimer(elId);
+  let sec = totalSec;
+  const el = document.getElementById(elId);
+  const tick = () => { if (el) el.textContent = `⏱ ${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`; };
+  tick();
+  _timers[elId] = setInterval(() => { sec--; tick(); if (sec <= 0) stopTimer(elId); }, 1000);
+}
+function stopTimer(elId) {
+  if (_timers[elId]) { clearInterval(_timers[elId]); delete _timers[elId]; }
 }
 
 // ── WEAKNESSES ──
@@ -1461,11 +1977,11 @@ function showToast(msg) {
 // ════════════════════════════════════════
 // LESEN MODULE
 // ════════════════════════════════════════
-let currentLesenTeil = null;
-let lesenData = null;
-let lesenAnswers = {};
-let lesenTimerInterval = null;
-let lesenTimerSec = 0;
+var currentLesenTeil = null;
+var lesenData = null;
+var lesenAnswers = {};
+var lesenTimerInterval = null;
+var lesenTimerSec = 0;
 
 const LESEN_SYSTEM_PROMPT = `你是 Goethe-Zertifikat B1「Lesen」模組的專業命題人（Testautor），同時熟悉 CEFR B1 的詞彙與語法界線。你為一個互動式德語學習網站產生可直接渲染的題目資料。
 
@@ -1476,7 +1992,23 @@ const LESEN_SYSTEM_PROMPT = `你是 Goethe-Zertifikat B1「Lesen」模組的專�
 4. 正確選項必須是原文的改寫（Paraphrase），不能直接照抄原句。
 5. 每大題至少 1 個陷阱：wörtlich（含原文關鍵字但陳述錯誤）、Teilwahrheit（一半正確一半矛盾）、nicht im Text（合理但未提及）、Zeitform（順序弄反）。
 6. 人名使用多元國際名字（Ricardo, Agnieska, Esra, Paolo…）。無真實品牌或真實人物。
-只輸出 JSON，不要 Markdown 圍欄，不要任何說明文字。`;
+7. 必須嚴格使用下方指定的 JSON key 名稱，不可自創或翻譯 key。
+只輸出合法 JSON（字串內的引號用 \\" 跳脫），不要 Markdown 圍欄，不要任何說明文字。`;
+
+const LESEN_SCHEMAS = {
+  teil1: `輸出格式（嚴格遵守這些 key 名稱）：
+{"topic":"主題","level":"B1","teil1":{"text":"blog全文220-280字","source_label":"www.xxx.de","beispiel":{"nr":0,"statement":"範例陳述","answer":"Richtig或Falsch"},"items":[{"nr":1,"statement":"陳述句","answer":"Richtig或Falsch","evidence":"原文句子","trap_type":"none或wörtlich或Teilwahrheit或nicht_im_text或Zeitform","explanation_zh":"中文解釋"}]}}
+items 共 6 題（nr 1-6），順序與文本敘事一致，Richtig:Falsch 為 3:3 或 4:2。`,
+  teil2: `輸出格式（嚴格遵守這些 key 名稱）：
+{"topic":"主題","level":"B1","teil2":{"texts":[{"id":"A","headline":"標題","subline":"副標","body":"新聞全文160-200字含具體數字","source_label":"aus einer Zeitung","beispiel":{"nr":0,"stem":"題幹","options":{"a":"...","b":"...","c":"..."},"answer":"a"},"items":[{"nr":7,"stem":"題幹","options":{"a":"...","b":"...","c":"..."},"answer":"b","item_function":"Hauptaussage","evidence":"原文句","explanation_zh":"中文"}]}]}}
+共兩篇 texts；第一篇 items 為 nr 7-9，第二篇為 nr 10-12。每篇 3 題依序為：主旨題、細節題、數據推論題。`,
+  teil3: `輸出格式（嚴格遵守這些 key 名稱）：
+{"topic":"主題","level":"B1","teil3":{"rahmensituation":"情境框架一句話","beispiel":{"nr":0,"situation":"範例情境","answer":"b"},"situations":[{"nr":13,"text":"情境1-2句含兩個條件","answer":"d","explanation_zh":"中文"}],"anzeigen":[{"key":"a","text":"廣告25-50字含聯絡方式","style":"bold","used_by":null}]}}
+situations 共 7 題（nr 13-19），恰有 1 題 answer 為 "0"（無符合廣告）。anzeigen 共 10 則（key a-j），每則只能用一次，3 則為純干擾。`,
+  teil4: `輸出格式（嚴格遵守這些 key 名稱）：
+{"topic":"主題","level":"B1","teil4":{"thema":"議題","intro":"In einer Zeitschrift lesen Sie Kommentare zu einem Artikel über …","frage":"Ist die Person für …?","beispiel":{"name":"Philip, 35, Leipzig","text":"評論50-75字","answer":"Ja"},"items":[{"nr":20,"author":"Tania, 28, Berlin","text":"評論50-75字","answer":"Ja或Nein","structure":"Zugeständnis+Position","explanation_zh":"中文"}]}}
+items 共 7 則（nr 20-26），Ja:Nein 為 4:3 或 3:4，至少 2 則用讓步句結構（Auch wenn/Obwohl…），不可用 Ich bin dafür/dagegen 直白句。`
+};
 
 function showLesenSelector() {
   stopLesenTimer();
@@ -1486,6 +2018,124 @@ function showLesenSelector() {
   document.getElementById('lesenResults').style.display = 'none';
   lesenAnswers = {};
   lesenData = null;
+}
+
+// ── NORMALIZE AI RESPONSE ──
+// AI sometimes returns different key names; map them all to our expected format
+function normalizeLesenData(raw, teil) {
+  // Top-level normalization
+  const out = {
+    topic: raw.topic || raw.thema || raw.modul || '',
+    level: raw.level || raw.schwierigkeit || 'B1'
+  };
+
+  if (teil === 'teil1') {
+    const src = raw.teil1 || raw.aufgabe || raw;
+    const textObj = src.text || {};
+    const textStr = typeof textObj === 'string' ? textObj : (textObj.inhalt || textObj.content || textObj.body || '');
+    const beispiel = src.beispiel || src.beispiele?.[0] || src.example || {};
+    const items = src.items || src.aufgaben || src.fragen || src.questions || [];
+    out.teil1 = {
+      text: textStr,
+      source_label: src.source_label || textObj.quelle || textObj.source || '',
+      beispiel: {
+        statement: beispiel.statement || beispiel.aussage || beispiel.text || '',
+        answer: beispiel.answer || beispiel.antwort || 'Richtig'
+      },
+      items: items.map((it, i) => ({
+        nr: it.nr || it.nummer || (i + 1),
+        statement: it.statement || it.aussage || it.text || '',
+        answer: it.answer || it.antwort || 'Richtig',
+        evidence: it.evidence || it.beleg || '',
+        trap_type: it.trap_type || it.fallentyp || 'none',
+        explanation_zh: it.explanation_zh || it.erklaerung || ''
+      }))
+    };
+  }
+
+  if (teil === 'teil2') {
+    const src = raw.teil2 || raw.aufgabe || raw;
+    const texts = src.texts || src.texte || src.artikel || [];
+    out.teil2 = {
+      texts: texts.map((t, ti) => {
+        const items = t.items || t.aufgaben || t.fragen || [];
+        const beispiel = t.beispiel || t.example || {};
+        return {
+          id: t.id || String.fromCharCode(65 + ti),
+          headline: t.headline || t.titel || t.ueberschrift || '',
+          subline: t.subline || t.unterzeile || '',
+          body: t.body || t.inhalt || t.text || '',
+          source_label: t.source_label || t.quelle || 'aus einer Zeitung',
+          beispiel: {
+            nr: 0,
+            stem: beispiel.stem || beispiel.frage || '',
+            options: beispiel.options || beispiel.antworten || { a: '', b: '', c: '' },
+            answer: beispiel.answer || beispiel.antwort || 'a'
+          },
+          items: items.map((it, i) => ({
+            nr: it.nr || it.nummer || (ti === 0 ? 7 + i : 10 + i),
+            stem: it.stem || it.frage || it.text || '',
+            options: it.options || it.antworten || { a: '', b: '', c: '' },
+            answer: it.answer || it.antwort || 'a',
+            evidence: it.evidence || '',
+            explanation_zh: it.explanation_zh || ''
+          }))
+        };
+      })
+    };
+  }
+
+  if (teil === 'teil3') {
+    const src = raw.teil3 || raw.aufgabe || raw;
+    const situations = src.situations || src.situationen || src.situationen || [];
+    const anzeigen = src.anzeigen || src.inserate || [];
+    const beispiel = src.beispiel || src.example || {};
+    out.teil3 = {
+      rahmensituation: src.rahmensituation || src.rahmen || '',
+      beispiel: {
+        nr: 0,
+        situation: beispiel.situation || beispiel.text || '',
+        answer: beispiel.answer || beispiel.antwort || 'a'
+      },
+      situations: situations.map((s, i) => ({
+        nr: s.nr || s.nummer || (i + 13),
+        text: s.text || s.situation || '',
+        answer: s.answer || s.antwort || '0',
+        explanation_zh: s.explanation_zh || ''
+      })),
+      anzeigen: anzeigen.map(a => ({
+        key: a.key || a.buchstabe || 'a',
+        text: a.text || a.inhalt || '',
+        style: a.style || 'bold',
+        used_by: a.used_by ?? null
+      }))
+    };
+  }
+
+  if (teil === 'teil4') {
+    const src = raw.teil4 || raw.aufgabe || raw;
+    const items = src.items || src.kommentare || src.meinungen || [];
+    const beispiel = src.beispiel || src.example || {};
+    out.teil4 = {
+      thema: src.thema || src.topic || '',
+      intro: src.intro || src.einleitung || '',
+      frage: src.frage || 'Ist die Person dafür?',
+      beispiel: {
+        name: beispiel.name || 'Beispiel',
+        text: beispiel.text || '',
+        answer: beispiel.answer || beispiel.antwort || 'Ja'
+      },
+      items: items.map((it, i) => ({
+        nr: it.nr || it.nummer || (i + 20),
+        author: it.author || it.autor || it.name || '',
+        text: it.text || it.kommentar || '',
+        answer: it.answer || it.antwort || 'Ja',
+        explanation_zh: it.explanation_zh || ''
+      }))
+    };
+  }
+
+  return out;
 }
 
 async function startLesen(teil) {
@@ -1507,7 +2157,7 @@ async function startLesen(teil) {
   const level = document.getElementById('lesenLevelSelect').value || 'B1-標準';
 
   const teilMap = { teil1: 'Teil 1', teil2: 'Teil 2', teil3: 'Teil 3', teil4: 'Teil 4' };
-  const userMsg = `${LESEN_SYSTEM_PROMPT}\n\n主題：${topic}\n要生成的部分：${teilMap[teil]}\n難度：${level}`;
+  const userMsg = `${LESEN_SYSTEM_PROMPT}\n\n${LESEN_SCHEMAS[teil]}\n\n主題：${topic}\n要生成的部分：${teilMap[teil]}\n難度：${level}`;
 
   try {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
@@ -1528,23 +2178,33 @@ async function startLesen(teil) {
     const data = await res.json();
     console.log('API response:', JSON.stringify(data).slice(0, 300));
     if (data.error) throw new Error(data.error.message);
-    const raw = data.content[0].text.trim().replace(/^```json\s*|^```\s*|```\s*$/gm, '').trim();
+    let raw = data.content[0].text.trim();
+    // Clean up markdown fences only (never touch quotes — German „..." is valid inside JSON strings)
+    raw = raw.replace(/^```json\s*|^```\s*|```\s*$/gm, '').trim();
     console.log('Raw text (first 300):', raw.slice(0, 300));
-    let parsed;
-    try {
-      parsed = JSON.parse(raw);
-      console.log('Parsed OK, keys:', Object.keys(parsed));
-    } catch(parseErr) {
-      console.log('Parse failed, trying regex extract...');
+    let parsed = null;
+    // Attempt 1: parse as-is
+    try { parsed = JSON.parse(raw); console.log('Parsed OK (direct)'); } catch(e1) {
+      // Attempt 2: extract the outermost {...} block
       const match = raw.match(/\{[\s\S]*\}/);
       if (match) {
-        parsed = JSON.parse(match[0]);
-        console.log('Regex extract OK');
+        try { parsed = JSON.parse(match[0]); console.log('Parsed OK (regex extract)'); } catch(e2) {
+          // Attempt 3: remove control chars + trailing commas, then retry
+          const repaired = match[0]
+            .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '')
+            .replace(/,\s*([}\]])/g, '$1');
+          try { parsed = JSON.parse(repaired); console.log('Parsed OK (repaired)'); } catch(e3) {
+            throw new Error('JSON 解析失敗：' + e3.message + '\n回傳前200字：' + raw.slice(0, 200));
+          }
+        }
       } else {
-        throw new Error('JSON 解析失敗：' + parseErr.message + '\n回傳前100字：' + raw.slice(0, 100));
+        throw new Error('JSON 解析失敗：找不到 JSON 物件\n回傳前100字：' + raw.slice(0, 100));
       }
     }
-    lesenData = parsed;
+    // Normalize response structure — AI sometimes uses different key names
+    const normalized = normalizeLesenData(parsed, teil);
+    console.log('Normalized:', JSON.stringify(normalized).slice(0, 200));
+    lesenData = normalized;
     loading.classList.remove('visible');
     renderLesenExercise(teil, lesenData);
   } catch(e) {
@@ -1901,6 +2561,727 @@ function updateTimerDisplay() {
   const el = document.getElementById('lesenTimer');
   if (el) el.textContent = `⏱ ${m}:${String(s).padStart(2,'0')}`;
 }
+
+// ════════════════════════════════════════
+// WORTSCHATZ MODULE
+// ════════════════════════════════════════
+var wsInited = false;
+var wsMode = 'learn';
+var wsSet = [];          // current 10-word learning set
+var wsSetCat = null;
+var wsIdx = 0;
+var wsQueue = [];        // current question queue
+var wsQIdx = 0;
+var wsQMode = 'practice'; // practice | test | retry | review(session)
+var wsSessionMistakes = [];
+var wsSessionRight = 0;
+
+const WS_CATEGORIES = [
+  {id:'alltag',de:'Alltag',zh:'日常生活',icon:'🌅',total:80},
+  {id:'familie',de:'Familie und Beziehungen',zh:'家庭與人際',icon:'👨‍👩‍👧',total:70},
+  {id:'wohnen',de:'Wohnen',zh:'居住',icon:'🏠',total:70},
+  {id:'essen',de:'Essen und Trinken',zh:'飲食',icon:'🍽️',total:80},
+  {id:'einkaufen',de:'Einkaufen',zh:'購物',icon:'🛒',total:60},
+  {id:'arbeit',de:'Arbeit und Beruf',zh:'工作與職業',icon:'💼',total:90},
+  {id:'schule',de:'Schule und Bildung',zh:'學校與教育',icon:'🎓',total:70},
+  {id:'reisen',de:'Reisen',zh:'旅行',icon:'✈️',total:80},
+  {id:'verkehr',de:'Verkehr',zh:'交通',icon:'🚆',total:60},
+  {id:'gesundheit',de:'Gesundheit',zh:'健康',icon:'🏥',total:80},
+  {id:'sport',de:'Sport und Fitness',zh:'運動健身',icon:'⚽',total:50},
+  {id:'freizeit',de:'Freizeit und Hobbys',zh:'休閒嗜好',icon:'🎨',total:60},
+  {id:'musik',de:'Musik',zh:'音樂',icon:'🎵',total:40},
+  {id:'buecher',de:'Bücher und Lesen',zh:'書籍閱讀',icon:'📚',total:40},
+  {id:'filme',de:'Filme und Fernsehen',zh:'影視',icon:'🎬',total:40},
+  {id:'technik',de:'Technik',zh:'科技',icon:'💻',total:60},
+  {id:'medien',de:'Soziale Medien',zh:'社群媒體',icon:'📱',total:40},
+  {id:'umwelt',de:'Umwelt',zh:'環境',icon:'🌱',total:60},
+  {id:'wetter',de:'Wetter',zh:'天氣',icon:'🌦️',total:40},
+  {id:'gefuehle',de:'Gefühle',zh:'情緒感受',icon:'💭',total:50},
+  {id:'person',de:'Persönlichkeit',zh:'個性特質',icon:'🧑',total:50},
+  {id:'komm',de:'Kommunikation',zh:'溝通表達',icon:'💬',total:60},
+  {id:'geld',de:'Geld und Finanzen',zh:'金錢財務',icon:'💶',total:50},
+  {id:'behoerden',de:'Behörden und Alltag in Deutschland',zh:'德國生活與機關',icon:'🏛️',total:60}
+];
+
+// ── STORAGE ──
+var wsWords = JSON.parse(localStorage.getItem('de_ws_words') || '{}');       // wordId → word record
+var wsMistakes = JSON.parse(localStorage.getItem('de_ws_mistakes') || '[]'); // mistake log
+var wsTagStats = JSON.parse(localStorage.getItem('de_ws_tagstats') || '{}'); // tag → {right,wrong}
+function wsSave() {
+  localStorage.setItem('de_ws_words', JSON.stringify(wsWords));
+  localStorage.setItem('de_ws_mistakes', JSON.stringify(wsMistakes));
+  localStorage.setItem('de_ws_tagstats', JSON.stringify(wsTagStats));
+  renderSidebarVocab();
+}
+function todayStr(offsetDays) {
+  const d = new Date(); d.setDate(d.getDate() + (offsetDays||0));
+  return d.toISOString().slice(0,10);
+}
+
+// ── MODE TABS ──
+function wsSetMode(mode) {
+  wsMode = mode;
+  ['Learn','Today','Weak'].forEach(m => document.getElementById('wsTab'+m).classList.toggle('active', mode === m.toLowerCase()));
+  if (mode === 'learn') renderCategories();
+  else if (mode === 'today') renderToday();
+  else renderWeakDashboard();
+}
+
+// ── CATEGORY GRID ──
+function renderCategories() {
+  const learned = {};
+  Object.values(wsWords).forEach(w => { learned[w.cat] = (learned[w.cat]||0) + 1; });
+  const el = document.getElementById('wsContent');
+  el.innerHTML = `<div class="cat-grid">` + WS_CATEGORIES.map(c => {
+    const n = learned[c.id] || 0;
+    const pct = Math.min(100, Math.round(n / c.total * 100));
+    return `<div class="cat-card" onclick="wsStartCategory('${c.id}')">
+      <div class="cat-icon">${c.icon}</div>
+      <div class="cat-de">${c.de}</div>
+      <div class="cat-zh">${c.zh}</div>
+      <div class="cat-count">${n} / ${c.total} 個單字 · ${pct}%</div>
+      <div class="cat-bar"><div class="cat-bar-fill" style="width:${pct}%"></div></div>
+      <div class="cat-levels"><span class="cat-level">A2</span><span class="cat-level">B1</span></div>
+      <button class="cat-cta${n?' secondary':''}" onclick="event.stopPropagation();wsStartCategory('${c.id}')">${n ? '繼續學習' : '開始學習'}</button>
+    </div>`;
+  }).join('') + `</div>`;
+}
+
+// ── GENERATE LEARNING SET ──
+async function wsStartCategory(catId) {
+  if (!apiKey) { showApiModal(); return; }
+  wsSetCat = WS_CATEGORIES.find(c => c.id === catId);
+  const known = Object.values(wsWords).filter(w => w.cat === catId).map(w => w.german);
+  const el = document.getElementById('wsContent');
+  el.innerHTML = `<div class="lesen-loading visible"><div class="spinner" style="width:24px;height:24px;border-width:3px"></div>
+    <div class="lesen-loading-text">AI 正在為「${wsSetCat.de}」準備 10 個高頻單字…<br><small style="color:var(--ink-light)">約需 15–25 秒</small></div></div>`;
+
+  const prompt = `你是德語 B1 教材編寫者，為華語學習者準備 Goethe B1 高頻詞彙。
+主題：${wsSetCat.de}（${wsSetCat.zh}）
+${known.length ? '學習者已學過這些字，請避開：' + known.slice(-40).join(', ') : ''}
+請生成恰好 10 個該主題的高頻實用單字：5 個動詞 + 5 個名詞。優先 A2-B1 高頻字，避免罕見或學術字。例句必須自然、A2-B1 難度。解釋用繁體中文。
+只輸出合法 JSON（不要圍欄不要說明），格式：
+{"words":[
+{"id":"teilnehmen","german":"teilnehmen","part_of_speech":"verb","meaning_zh":"參加","meaning_en":"to participate","level":"B1","frequency":"high","present_third_person":"nimmt teil","perfect":"hat teilgenommen","auxiliary":"haben","is_separable":true,"is_reflexive":false,"preposition":"an","case":"Dativ","article":null,"plural":null,"examples":["Ich nehme an einem Deutschkurs teil.","Viele Mitarbeiter haben an der Besprechung teilgenommen."],"collocations":["an einem Kurs teilnehmen","an einer Veranstaltung teilnehmen","aktiv teilnehmen"],"memory_tip":"記憶提示（中文）","more_zh":"同義詞/反義詞/常見錯誤等補充（中文，2-3句）"},
+{"id":"reise","german":"Reise","part_of_speech":"noun","meaning_zh":"旅行","meaning_en":"journey","level":"A2","frequency":"high","article":"die","plural":"die Reisen","preposition":null,"case":null,"present_third_person":null,"perfect":null,"auxiliary":null,"is_separable":false,"is_reflexive":false,"examples":["Unsere Reise nach Deutschland dauert zwei Wochen.","Ich plane gerade eine Reise nach Berlin."],"collocations":["eine Reise planen","auf Reisen sein"],"memory_tip":"...","more_zh":"..."}
+]}
+名詞的 german 欄位不含冠詞；動詞若無固定介系詞則 preposition 為 null。`;
+
+  try {
+    const data = await callClaude(prompt, 4500);
+    wsSet = (data.words || []).slice(0, 10);
+    if (wsSet.length < 6) throw new Error('AI 回傳單字數量不足');
+    // register words in storage
+    wsSet.forEach(w => {
+      const id = w.id || w.german.toLowerCase();
+      w.id = id;
+      if (!wsWords[id]) {
+        wsWords[id] = { ...w, cat: catId, mastery: 0, right: 0, wrong: 0,
+          lastReview: null, nextReview: null, favorite: false, inReview: false, history: [] };
+      }
+    });
+    wsSave();
+    wsIdx = 0;
+    renderFlash();
+  } catch(e) {
+    showToast('生成單字失敗：' + e.message);
+    renderCategories();
+  }
+}
+
+// ── FLASHCARDS ──
+function renderFlash() {
+  const w = wsSet[wsIdx];
+  const rec = wsWords[w.id];
+  const isVerb = w.part_of_speech === 'verb';
+  const el = document.getElementById('wsContent');
+
+  const grammarItems = isVerb ? [
+    ['Präsens', w.present_third_person], ['Perfekt', w.perfect],
+    ['Hilfsverb', w.auxiliary], ['Trennbar', w.is_separable ? 'ja' : 'nein'],
+    w.is_reflexive ? ['Reflexiv', 'ja'] : null,
+    w.preposition ? ['Präposition', w.preposition + ' + ' + (w.case||'')] : null
+  ] : [
+    ['Artikel', w.article], ['Plural', w.plural]
+  ];
+
+  el.innerHTML = `
+    <div class="flash-progress">
+      <div class="flash-counter">${wsIdx+1} / ${wsSet.length}</div>
+      <div class="flash-dots">${wsSet.map((_,i)=>`<span class="flash-dot${i===wsIdx?' current':i<wsIdx?' seen':''}" onclick="wsIdx=${i};renderFlash()"></span>`).join('')}</div>
+    </div>
+    <div class="flash-card">
+      <div class="flash-word-row">
+        ${!isVerb && w.article ? `<span class="flash-article">${w.article}</span>` : ''}
+        <span class="flash-word">${w.german}</span>
+        <div class="flash-actions">
+          <button class="flash-action-btn${rec.favorite?' on':''}" onclick="wsToggleFav('${w.id}')" title="收藏">${rec.favorite?'⭐':'☆'}</button>
+          <button class="flash-action-btn${rec.inReview?' on':''}" onclick="wsToggleReview('${w.id}')" title="加入複習">📥</button>
+        </div>
+      </div>
+      <div class="flash-meaning">${w.meaning_zh}</div>
+      <div class="flash-meaning-en">${w.meaning_en||''}</div>
+      <div class="flash-chips">
+        <span class="prompt-tag">${isVerb?'Verb':'Nomen'}</span>
+        <span class="prompt-tag">${w.level||'B1'}</span>
+        <span class="prompt-tag">${w.frequency==='high'?'高頻':'常用'}</span>
+      </div>
+      <div class="flash-grammar">
+        ${grammarItems.filter(Boolean).map(([l,v])=>`<div class="fg-item"><div class="fg-label">${l}</div><div class="fg-value">${v||'—'}</div></div>`).join('')}
+      </div>
+      <div class="flash-section-label">Beispiele</div>
+      ${(w.examples||[]).map((ex,i)=>`<div class="flash-example">${i+1}. ${ex}</div>`).join('')}
+      <div class="flash-section-label">Häufige Verwendung</div>
+      ${(w.collocations||[]).map(c=>`<div class="flash-colloc">· ${c}</div>`).join('')}
+      ${w.memory_tip ? `<div class="flash-tip">💡 ${w.memory_tip}</div>` : ''}
+      ${w.more_zh ? `<button class="flash-more-btn" onclick="this.nextElementSibling.classList.toggle('open')">更多用法 ▾</button><div class="flash-more">${w.more_zh}</div>` : ''}
+    </div>
+    <div class="flash-familiar-row">
+      <button class="familiar-btn${rec._fam==='low'?' sel-low':''}" onclick="wsSetFamiliar('${w.id}','low')">不熟</button>
+      <button class="familiar-btn${rec._fam==='mid'?' sel-mid':''}" onclick="wsSetFamiliar('${w.id}','mid')">有點熟</button>
+      <button class="familiar-btn${rec._fam==='high'?' sel-high':''}" onclick="wsSetFamiliar('${w.id}','high')">已熟悉</button>
+    </div>
+    <div class="flash-nav">
+      <button class="next-btn secondary" onclick="wsPrev()" ${wsIdx===0?'disabled style="opacity:0.4"':''}>← 上一個</button>
+      ${wsIdx < wsSet.length-1
+        ? `<button class="next-btn primary" onclick="wsNext()">下一個 →</button>`
+        : `<button class="next-btn primary" onclick="wsFinishFlash()">看完了 ✓</button>`}
+    </div>`;
+}
+function wsPrev(){ if(wsIdx>0){wsIdx--;renderFlash();} }
+function wsNext(){ if(wsIdx<wsSet.length-1){wsIdx++;renderFlash();} }
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('panel-wortschatz').classList.contains('active')) return;
+  if (document.querySelector('.flash-card') === null) return;
+  if (e.key === 'ArrowLeft') wsPrev();
+  if (e.key === 'ArrowRight') wsNext();
+});
+function wsToggleFav(id){ wsWords[id].favorite = !wsWords[id].favorite; wsSave(); renderFlash(); }
+function wsToggleReview(id){
+  const r = wsWords[id];
+  r.inReview = !r.inReview;
+  if (r.inReview && !r.nextReview) r.nextReview = todayStr(0);
+  wsSave(); renderFlash();
+}
+function wsSetFamiliar(id, lvl){
+  const r = wsWords[id];
+  r._fam = lvl;
+  r.mastery = Math.max(r.mastery, lvl==='low'?15:lvl==='mid'?40:65);
+  if (lvl==='low' && !r.nextReview) { r.inReview = true; r.nextReview = todayStr(0); }
+  wsSave(); renderFlash();
+}
+function wsFinishFlash() {
+  const el = document.getElementById('wsContent');
+  el.innerHTML = `<div class="lesen-score-bar" style="flex-direction:column;align-items:center;text-align:center;gap:14px;padding:36px">
+    <div class="lesen-score-num">🎉</div>
+    <div style="font-size:16px;font-weight:600">你已看完這組 ${wsSet.length} 個單字</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+      <button class="next-btn primary" onclick="wsStartPractice()">開始練習</button>
+      <button class="next-btn secondary" onclick="wsIdx=0;renderFlash()">再看一次</button>
+    </div>
+  </div>`;
+}
+
+// ── LOCAL QUESTION GENERATOR ──
+function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+function pickOthers(words, w, field, n) {
+  return shuffle(words.filter(x=>x.id!==w.id && x[field]).map(x=>x[field])).slice(0,n);
+}
+function clozeSentence(w) {
+  const ex = (w.examples||[])[0] || '';
+  const forms = [w.german];
+  if (w.part_of_speech==='verb') {
+    if (w.present_third_person) forms.push(...w.present_third_person.split(' '));
+    if (w.perfect) forms.push(w.perfect.split(' ').pop());
+  }
+  for (const f of forms.sort((a,b)=>b.length-a.length)) {
+    if (f && f.length > 2 && ex.includes(f)) return { sentence: ex.replace(f, '____'), answer: f };
+  }
+  return null;
+}
+
+function buildQuestions(words, count, excludeTypes) {
+  const qs = [];
+  const push = q => { if (q) qs.push(q); };
+  words.forEach(w => {
+    const isVerb = w.part_of_speech === 'verb';
+    if (!isVerb && w.article) push({
+      type:'article', tag:'Artikel', wordId:w.id,
+      prompt:`<span class="blank">___</span> ${w.german}（${w.meaning_zh}）`,
+      options: shuffle(['der','die','das']),
+      answer: w.article,
+      explain: `${w.german} 的冠詞是 ${w.article}。${w.plural?'複數：'+w.plural+'。':''}`
+    });
+    if (!isVerb && w.plural) push({
+      type:'plural', tag:'Plural', wordId:w.id,
+      prompt:`「${w.article} ${w.german}」的複數是？`,
+      options: shuffle([w.plural, 'die '+w.german+'en', 'die '+w.german+'s'].filter((v,i,arr)=>arr.indexOf(v)===i)).slice(0,3),
+      answer: w.plural,
+      explain: `${w.german} 的複數是 ${w.plural}。`
+    });
+    push({
+      type:'meaning', tag:'Bedeutung', wordId:w.id,
+      prompt:`„${w.german}" 的意思是？`,
+      options: shuffle([w.meaning_zh, ...pickOthers(words,w,'meaning_zh',2)]),
+      answer: w.meaning_zh,
+      explain: `${w.german} = ${w.meaning_zh}（${w.meaning_en||''}）。例：${(w.examples||[])[0]||''}`
+    });
+    push({
+      type:'reverse', tag:'Wortwahl', wordId:w.id,
+      prompt:`「${w.meaning_zh}」的德文是？`,
+      options: shuffle([w.german, ...pickOthers(words,w,'german',2)]),
+      answer: w.german,
+      explain: `${w.meaning_zh} = ${w.german}。`
+    });
+    if (isVerb && w.preposition) push({
+      type:'prep', tag:'Präposition', wordId:w.id,
+      prompt:`${w.german} + <span class="blank">___</span> + ${w.case||'?'}`,
+      options: shuffle([w.preposition, ...shuffle(['an','auf','für','mit','über','von','um'].filter(p=>p!==w.preposition)).slice(0,2)]),
+      answer: w.preposition,
+      explain: `${w.german} 通常搭配 ${w.preposition} + ${w.case||''}。例：${(w.collocations||[])[0]||''}`
+    });
+    if (isVerb && w.perfect) push({
+      type:'perfekt', tag:'Perfekt', wordId:w.id,
+      prompt:`„${w.german}" 的 Perfekt 是？`,
+      options: shuffle([w.perfect,
+        (w.auxiliary==='haben'?'ist ':'hat ') + w.perfect.split(' ').pop(),
+        w.auxiliary + ' ge' + w.german + 't'].filter((v,i,arr)=>arr.indexOf(v)===i)).slice(0,3),
+      answer: w.perfect,
+      explain: `${w.german} 的 Perfekt：${w.perfect}（助動詞 ${w.auxiliary}${w.is_separable?'，可分動詞 ge 在中間':''}）。`
+    });
+    const cz = clozeSentence(w);
+    if (cz) push({
+      type:'cloze', tag:'Kollokation', wordId:w.id,
+      prompt: cz.sentence.replace('____','<span class="blank">____</span>'),
+      options: shuffle([cz.answer, ...pickOthers(words,w,'german',2)]),
+      answer: cz.answer,
+      explain: `完整句子：${(w.examples||[])[0]}`
+    });
+    if ((w.collocations||[])[0] && isVerb && w.preposition) {
+      const good = w.collocations[0];
+      const badPrep = ['für','mit','über'].find(p=>p!==w.preposition) || 'für';
+      const bad = good.replace(w.preposition, badPrep);
+      if (bad !== good) push({
+        type:'errorfix', tag:'Präposition', wordId:w.id,
+        prompt:`哪一個是正確的？`,
+        options: shuffle([good, bad]),
+        answer: good,
+        explain: `${w.german} 固定搭配 ${w.preposition} + ${w.case||''}，所以是「${good}」。`
+      });
+    }
+    push({
+      type:'translate', tag:'Rechtschreibung', wordId:w.id, input:true,
+      prompt:`請寫出「${w.meaning_zh}」的德文${!isVerb?'（不用寫冠詞）':''}：`,
+      answer: w.german,
+      explain: `正確拼法：${!isVerb&&w.article?w.article+' ':''}${w.german}。`
+    });
+  });
+  let pool = qs.filter(q => !(excludeTypes||[]).includes(q.type));
+  // one question per word max first, then fill
+  const seen = new Set(); const first = []; const rest = [];
+  shuffle(pool).forEach(q => { if(!seen.has(q.wordId)){seen.add(q.wordId);first.push(q);} else rest.push(q); });
+  return first.concat(shuffle(rest)).slice(0, count);
+}
+
+// ── PRACTICE / TEST FLOW ──
+function wsStartPractice() {
+  wsQMode = 'practice';
+  wsQueue = buildQuestions(wsSet, 5, ['translate']);
+  wsQIdx = 0; wsSessionMistakes = []; wsSessionRight = 0;
+  renderQuestion();
+}
+function wsStartTest() {
+  wsQMode = 'test';
+  wsQueue = buildQuestions(wsSet, 10, []);
+  wsQIdx = 0; wsSessionMistakes = []; wsSessionRight = 0;
+  renderQuestion();
+}
+
+const WS_TYPE_LABELS = { article:'冠詞', plural:'複數', meaning:'字義', reverse:'中翻德', prep:'介系詞', perfekt:'Perfekt', cloze:'例句填空', errorfix:'改錯', translate:'拼寫' };
+
+function renderQuestion() {
+  const q = wsQueue[wsQIdx];
+  const total = wsQueue.length;
+  const el = document.getElementById('wsContent');
+  const modeLabel = wsQMode==='practice'?'快速練習':wsQMode==='test'?'測驗':wsQMode==='retry'?'錯題重試':'今日複習';
+  el.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
+      <div style="font-weight:600;font-size:14px">${modeLabel} · 第 ${wsQIdx+1} / ${total} 題</div>
+      <div style="font-size:12px;color:var(--ink-light)">${wsQMode==='test'?'提交後才顯示答案':''}</div>
+    </div>
+    <div class="ws-progress-bar"><div class="ws-progress-fill" style="width:${wsQIdx/total*100}%"></div></div>
+    <div class="ws-q-card">
+      <span class="ws-q-type">${WS_TYPE_LABELS[q.type]||q.type}</span>
+      <div class="ws-q-prompt">${q.prompt}</div>
+      ${q.input
+        ? `<input class="ws-text-input" id="wsInput" placeholder="輸入德文…" autocomplete="off">`
+        : `<div class="mc-options">${q.options.map((o,i)=>`<button class="mc-option" id="wsOpt${i}" onclick="wsPick(${i})"><span class="mc-key">${String.fromCharCode(97+i)})</span> ${o}</button>`).join('')}</div>`}
+      <div id="wsFeedback"></div>
+      <div class="next-row">
+        <button class="next-btn primary" id="wsSubmitQ" onclick="wsSubmitQ()">送出</button>
+        ${wsQMode!=='retry' ? `<button class="next-btn secondary" onclick="wsSkipQ()">跳過</button>` : ''}
+      </div>
+    </div>`;
+  el.dataset.picked = '';
+  if (q.input) setTimeout(()=>{ const i=document.getElementById('wsInput'); if(i){ i.focus(); i.addEventListener('keydown',e=>{if(e.key==='Enter')wsSubmitQ();}); } },50);
+}
+function wsPick(i) {
+  document.getElementById('wsContent').dataset.picked = i;
+  wsQueue[wsQIdx].options.forEach((_,j)=>{
+    document.getElementById('wsOpt'+j).className = 'mc-option' + (i===j?' selected':'');
+  });
+}
+function wsRecordAnswer(q, userAns, isRight) {
+  const rec = wsWords[q.wordId];
+  const stat = wsTagStats[q.tag] = wsTagStats[q.tag] || {right:0,wrong:0};
+  if (isRight) {
+    wsSessionRight++;
+    stat.right++;
+    if (rec) { rec.right++; rec.mastery = Math.min(100, rec.mastery + 12); }
+  } else {
+    stat.wrong++;
+    wsSessionMistakes.push({ ...q, userAns, ts: todayStr(0) });
+    wsMistakes.push({ wordId:q.wordId, type:q.type, tag:q.tag, userAns, correct:q.answer, date:todayStr(0), resolved:false });
+    if (wsMistakes.length > 300) wsMistakes = wsMistakes.slice(-300);
+    if (rec) {
+      rec.wrong++; rec.mastery = Math.max(5, rec.mastery - 18);
+      rec.inReview = true;
+      rec.history = (rec.history||[]).concat([{date:todayStr(0), tag:q.tag, ok:false}]).slice(-12);
+    }
+  }
+  if (rec && isRight) rec.history = (rec.history||[]).concat([{date:todayStr(0), tag:q.tag, ok:true}]).slice(-12);
+  wsSave();
+}
+function wsSubmitQ() {
+  const q = wsQueue[wsQIdx];
+  let userAns, isRight;
+  if (q.input) {
+    userAns = (document.getElementById('wsInput').value||'').trim();
+    if (!userAns) { showToast('請先輸入答案'); return; }
+    isRight = userAns.toLowerCase() === q.answer.toLowerCase();
+  } else {
+    const p = document.getElementById('wsContent').dataset.picked;
+    if (p === '') { showToast('請先選一個答案'); return; }
+    userAns = q.options[+p];
+    isRight = userAns === q.answer;
+  }
+  wsRecordAnswer(q, userAns, isRight);
+
+  if (wsQMode === 'test') { wsAdvance(); return; } // no immediate feedback in test
+
+  // practice / retry / review: immediate feedback
+  const fb = document.getElementById('wsFeedback');
+  fb.innerHTML = `<div class="ws-feedback ${isRight?'right':'wrong'}">
+    ${isRight ? '✅ 正確！' : `❌ 正確答案是「<strong>${q.answer}</strong>」。`}<br>${q.explain}
+  </div>`;
+  document.getElementById('wsSubmitQ').textContent = wsQIdx < wsQueue.length-1 ? '下一題 →' : '完成';
+  document.getElementById('wsSubmitQ').onclick = wsAdvance;
+  document.querySelectorAll('.mc-option').forEach(b => b.style.pointerEvents='none');
+  const inp = document.getElementById('wsInput'); if (inp) inp.disabled = true;
+}
+function wsSkipQ() {
+  const q = wsQueue[wsQIdx];
+  wsRecordAnswer(q, '（跳過）', false);
+  wsAdvance();
+}
+function wsAdvance() {
+  if (wsQIdx < wsQueue.length - 1) { wsQIdx++; renderQuestion(); return; }
+  // end of round
+  if (wsQMode === 'practice') {
+    const el = document.getElementById('wsContent');
+    el.innerHTML = `<div class="lesen-score-bar" style="flex-direction:column;align-items:center;text-align:center;gap:14px;padding:36px">
+      <div class="lesen-score-num">${wsSessionRight} / ${wsQueue.length}</div>
+      <div style="font-size:15px;font-weight:600">熱身完成，準備好了嗎？</div>
+      <button class="next-btn primary" onclick="wsStartTest()">開始 10 題測驗</button>
+    </div>`;
+    return;
+  }
+  if (wsQMode === 'test') { renderResults(); return; }
+  if (wsQMode === 'retry') {
+    const stillWrong = wsSessionMistakes.filter(m => m._retryRound);
+    renderRetryDone();
+    return;
+  }
+  if (wsQMode === 'review') { renderReviewDone(); return; }
+}
+
+// ── RESULTS ──
+function renderResults() {
+  const total = wsQueue.length;
+  const wrong = wsSessionMistakes;
+  const right = wsSessionRight;
+  const pct = Math.round(right/total*100);
+  const tagCounts = {};
+  wrong.forEach(m => tagCounts[m.tag] = (tagCounts[m.tag]||0)+1);
+  const weakTags = Object.entries(tagCounts).sort((a,b)=>b[1]-a[1]);
+  // schedule reviews for set words
+  wsSet.forEach(w => {
+    const rec = wsWords[w.id]; if (!rec) return;
+    rec.lastReview = todayStr(0);
+    const wasWrong = wrong.some(m => m.wordId === w.id);
+    rec.nextReview = wasWrong ? todayStr(1) : rec.mastery < 40 ? todayStr(1) : rec.mastery < 60 ? todayStr(3) : rec.mastery < 80 ? todayStr(7) : todayStr(14);
+    if (wasWrong || rec.mastery < 60) rec.inReview = true;
+  });
+  wsSave();
+
+  const el = document.getElementById('wsContent');
+  el.innerHTML = `
+    <div class="lesen-score-bar">
+      <div>
+        <div class="lesen-score-num">${right} / ${total}</div>
+        <div class="lesen-score-label">${pct>=80?'🎉 表現很好！':pct>=60?'👍 掌握大部分單字':'💪 繼續加油'}
+          ${weakTags.length ? '，需要加強：' + weakTags.map(t=>t[0]).join('、') : ''}</div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        ${wrong.length ? `<button class="next-btn primary" onclick="renderMistakeReview()">複習錯題</button>
+        <button class="next-btn secondary" onclick="wsStartRetry()">重測錯題</button>` : ''}
+        <button class="next-btn secondary" onclick="wsSetMode('learn')">返回主題</button>
+        ${wsSetCat ? `<button class="next-btn secondary" onclick="wsStartCategory('${wsSetCat.id}')">學習下一組</button>` : ''}
+      </div>
+    </div>
+    <div id="wsResultDetail">
+      ${wrong.length === 0 ? `<div class="grammar-note ok"><div class="note-rule">✅ 全對！這組單字掌握得很好。</div></div>` : ''}
+    </div>`;
+  if (wrong.length) renderMistakeReview();
+}
+
+// ── MISTAKE REVIEW ──
+function renderMistakeReview() {
+  const el = document.getElementById('wsResultDetail') || document.getElementById('wsContent');
+  el.innerHTML = `<div class="feedback-summary-label" style="margin:16px 0 10px">📖 錯題解析</div>` +
+    wsSessionMistakes.map(m => {
+      const rec = wsWords[m.wordId] || {};
+      return `<div class="review-item wrong">
+        <div class="review-item-header">
+          <span class="review-verdict w">✗</span>
+          <strong style="font-size:14px">${rec.german||m.wordId}</strong>
+          <span class="trap-badge">${m.tag}</span>
+          <span style="font-size:11px;color:var(--ink-light);margin-left:auto">掌握度 ${rec.mastery||0}%</span>
+        </div>
+        <div class="review-q">${m.prompt.replace(/<[^>]+>/g,'____')}</div>
+        <div class="review-ans">你的答案：<strong style="color:var(--red)">${m.userAns}</strong> · 正確：<strong style="color:var(--green)">${m.answer}</strong></div>
+        <div class="review-explanation">💡 ${m.explain}</div>
+      </div>`;
+    }).join('') +
+    `<div class="next-row"><button class="next-btn primary" onclick="wsStartRetry()">立即再試一次</button></div>`;
+}
+
+// ── RETRY ──
+function wsStartRetry() {
+  const wrongIds = [...new Set(wsSessionMistakes.map(m=>m.wordId))];
+  const wrongWords = wrongIds.map(id => wsSet.find(w=>w.id===id) || wsWords[id]).filter(Boolean);
+  if (!wrongWords.length) { showToast('沒有錯題需要重試'); return; }
+  const wrongTypes = {}; wsSessionMistakes.forEach(m => { (wrongTypes[m.wordId]=wrongTypes[m.wordId]||[]).push(m.type); });
+  wsQMode = 'retry';
+  // different format: exclude the exact type the user just failed
+  wsQueue = [];
+  wrongWords.forEach(w => {
+    const qs = buildQuestions([...wrongWords.length>1?wrongWords:wsSet], 30, []);
+    const q = qs.find(x => x.wordId===w.id && !(wrongTypes[w.id]||[]).includes(x.type)) || qs.find(x=>x.wordId===w.id);
+    if (q) wsQueue.push(q);
+  });
+  wsQIdx = 0; wsSessionMistakes = []; wsSessionRight = 0;
+  renderQuestion();
+}
+function renderRetryDone() {
+  const stillWrong = wsSessionMistakes;
+  const el = document.getElementById('wsContent');
+  if (!stillWrong.length) {
+    el.innerHTML = `<div class="lesen-score-bar" style="flex-direction:column;align-items:center;text-align:center;gap:14px;padding:36px">
+      <div class="lesen-score-num">✅</div>
+      <div style="font-size:15px;font-weight:600">所有錯題都答對了！這些單字已排入複習計畫。</div>
+      <div style="display:flex;gap:10px">
+        <button class="next-btn primary" onclick="wsSetMode('learn')">返回主題</button>
+        ${wsSetCat?`<button class="next-btn secondary" onclick="wsStartCategory('${wsSetCat.id}')">學習下一組</button>`:''}
+      </div>
+    </div>`;
+  } else {
+    stillWrong.forEach(m => { const r = wsWords[m.wordId]; if (r) { r.inReview = true; r.nextReview = todayStr(1); } });
+    wsSave();
+    el.innerHTML = `<div class="lesen-score-bar" style="flex-direction:column;align-items:flex-start;gap:12px">
+      <div style="font-weight:600">還有 ${stillWrong.length} 個單字沒掌握，已標記為弱點單字，明天會再出現：</div>
+      ${stillWrong.map(m => { const r = wsWords[m.wordId]||{};
+        return `<div style="font-size:13.5px">· <strong>${r.german||m.wordId}</strong> — ${m.explain}</div>`; }).join('')}
+      <div style="display:flex;gap:10px;margin-top:6px">
+        <button class="next-btn primary" onclick="wsStartRetry()">再試一次</button>
+        <button class="next-btn secondary" onclick="wsSetMode('learn')">返回主題</button>
+      </div>
+    </div>`;
+  }
+}
+
+// ── TODAY REVIEW ──
+function dueWords() {
+  const t = todayStr(0);
+  return Object.values(wsWords).filter(w => w.inReview && w.nextReview && w.nextReview <= t);
+}
+function renderToday() {
+  const due = dueWords();
+  const weak = Object.values(wsWords).filter(w => w.mastery < 40 && w.right+w.wrong > 0);
+  const recent = Object.values(wsWords).filter(w => w.lastReview === todayStr(0));
+  const overdue = due.filter(w => w.nextReview < todayStr(0));
+  const el = document.getElementById('wsContent');
+  el.innerHTML = `
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">${due.length}</div><div class="stat-label">今日待複習</div></div>
+      <div class="stat-card"><div class="stat-num">${overdue.length}</div><div class="stat-label">已逾期</div></div>
+      <div class="stat-card"><div class="stat-num">${weak.length}</div><div class="stat-label">弱點單字</div></div>
+      <div class="stat-card"><div class="stat-num">${recent.length}</div><div class="stat-label">今天已學</div></div>
+    </div>
+    ${due.length ? `
+      <div class="lesen-score-bar">
+        <div>
+          <div style="font-weight:600;font-size:15px">今天有 ${due.length} 個單字需要複習</div>
+          <div style="font-size:12.5px;color:var(--ink-light);margin-top:2px">預計 ${Math.max(1,Math.ceil(due.length*0.5))} 分鐘</div>
+        </div>
+        <button class="next-btn primary" onclick="wsStartTodayReview()">開始今日複習</button>
+      </div>
+      ${due.slice(0,12).map(w=>`<div class="ws-word-row" onclick="renderWordDetail('${w.id}')">
+        <strong style="min-width:120px">${w.part_of_speech==='noun'&&w.article?w.article+' ':''}${w.german}</strong>
+        <span style="font-size:12.5px;color:var(--ink-light);flex:1">${w.meaning_zh}</span>
+        <div class="ws-mastery-bar"><div class="cat-bar-fill" style="width:${w.mastery}%;background:${w.mastery<40?'var(--red)':w.mastery<70?'#E0A800':'var(--green)'}"></div></div>
+      </div>`).join('')}`
+    : `<div class="lesen-score-bar" style="justify-content:center;padding:36px"><div style="text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">🌤️</div>
+        <div style="font-weight:600">今天沒有待複習的單字</div>
+        <div style="font-size:12.5px;color:var(--ink-light);margin-top:4px">去「主題學習」學一組新單字吧！</div>
+      </div></div>`}`;
+}
+function wsStartTodayReview() {
+  const due = dueWords();
+  if (!due.length) return;
+  wsQMode = 'review';
+  wsQueue = buildQuestions(due, Math.min(due.length * 2, 16), []);
+  wsQIdx = 0; wsSessionMistakes = []; wsSessionRight = 0;
+  renderQuestion();
+}
+function renderReviewDone() {
+  // SRS scheduling
+  const answeredIds = [...new Set(wsQueue.map(q=>q.wordId))];
+  answeredIds.forEach(id => {
+    const rec = wsWords[id]; if (!rec) return;
+    const wasWrong = wsSessionMistakes.some(m => m.wordId === id);
+    rec.lastReview = todayStr(0);
+    if (wasWrong) { rec.nextReview = todayStr(1); }
+    else {
+      const streak2 = (rec.history||[]).slice(-3).every(h=>h.ok);
+      rec.nextReview = rec.mastery >= 80 && streak2 ? todayStr(14) : rec.mastery >= 60 ? todayStr(7) : todayStr(3);
+      if (rec.mastery >= 95) { rec.nextReview = todayStr(30); rec.inReview = false; }
+    }
+  });
+  wsSave();
+  const el = document.getElementById('wsContent');
+  el.innerHTML = `<div class="lesen-score-bar" style="flex-direction:column;align-items:center;text-align:center;gap:14px;padding:36px">
+    <div class="lesen-score-num">${wsSessionRight} / ${wsQueue.length}</div>
+    <div style="font-weight:600">今日複習完成！${wsSessionMistakes.length?'答錯的單字明天會再出現。':''}</div>
+    <div style="display:flex;gap:10px">
+      ${wsSessionMistakes.length?`<button class="next-btn primary" onclick="renderMistakeReviewFull()">看錯題解析</button>`:''}
+      <button class="next-btn secondary" onclick="wsSetMode('today')">返回</button>
+    </div>
+  </div><div id="wsResultDetail"></div>`;
+}
+function renderMistakeReviewFull(){ renderMistakeReview(); }
+
+// ── WEAKNESS DASHBOARD ──
+function renderWeakDashboard(filterTag) {
+  const tags = Object.entries(wsTagStats).map(([tag,s]) => ({
+    tag, ...s, total: s.right+s.wrong,
+    acc: s.right+s.wrong ? Math.round(s.right/(s.right+s.wrong)*100) : 0
+  })).filter(t => t.wrong > 0).sort((a,b) => b.wrong - a.wrong);
+  const weakWords = Object.values(wsWords).filter(w => w.wrong > 0).sort((a,b) => a.mastery - b.mastery);
+  const improved = Object.values(wsWords).filter(w => w.wrong > 0 && w.mastery >= 60);
+  const weekMist = wsMistakes.filter(m => m.date >= todayStr(-7));
+  const weekAll = Object.values(wsTagStats).reduce((s,t)=>s+t.right+t.wrong,0);
+
+  const el = document.getElementById('wsContent');
+  if (!tags.length && !weakWords.length) {
+    el.innerHTML = `<div class="lesen-score-bar" style="justify-content:center;padding:36px"><div style="text-align:center">
+      <div style="font-size:28px;margin-bottom:8px">📊</div>
+      <div style="font-weight:600">還沒有測驗紀錄</div>
+      <div style="font-size:12.5px;color:var(--ink-light);margin-top:4px">完成一組單字測驗後，弱點分析會出現在這裡。</div>
+    </div></div>`;
+    return;
+  }
+  const shown = filterTag ? weakWords.filter(w => (w.history||[]).some(h=>!h.ok&&h.tag===filterTag) || wsMistakes.some(m=>m.wordId===w.id&&m.tag===filterTag)) : weakWords;
+  el.innerHTML = `
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">${tags[0]?tags[0].tag:'—'}</div><div class="stat-label">最常見錯誤類型</div></div>
+      <div class="stat-card"><div class="stat-num">${weakWords.filter(w=>w.mastery<40).length}</div><div class="stat-label">弱點單字</div></div>
+      <div class="stat-card"><div class="stat-num">${improved.length}</div><div class="stat-label">已進步單字</div></div>
+      <div class="stat-card"><div class="stat-num">${weekMist.length}</div><div class="stat-label">本週錯題數</div></div>
+    </div>
+    <div class="feedback-summary-label" style="margin-bottom:8px">錯誤類型分析${filterTag?`（篩選：${filterTag} <button class="flash-more-btn" onclick="renderWeakDashboard()">清除</button>）`:''}</div>
+    <div style="margin-bottom:18px">
+      ${tags.map(t => `<button class="weak-tag-btn${t.acc>=60?' amber':''}" onclick="renderWeakDashboard('${t.tag}')">${t.tag} · 錯 ${t.wrong} 次 · 正確率 ${t.acc}%</button>`).join('')}
+    </div>
+    <div class="feedback-summary-label" style="margin-bottom:8px">問題單字（點擊看歷史）</div>
+    ${shown.slice(0,15).map(w=>`<div class="ws-word-row" onclick="renderWordDetail('${w.id}')">
+      <strong style="min-width:130px">${w.part_of_speech==='noun'&&w.article?w.article+' ':''}${w.german}</strong>
+      <span style="font-size:12.5px;color:var(--ink-light);flex:1">${w.meaning_zh} · 錯 ${w.wrong} 次</span>
+      <div class="ws-mastery-bar"><div class="cat-bar-fill" style="width:${w.mastery}%;background:${w.mastery<40?'var(--red)':w.mastery<70?'#E0A800':'var(--green)'}"></div></div>
+      <span style="font-size:11.5px;color:var(--ink-light);min-width:34px;text-align:right">${w.mastery}%</span>
+    </div>`).join('')}
+    ${shown.length ? `<div class="next-row"><button class="next-btn primary" onclick="wsPracticeWeak(${filterTag?`'${filterTag}'`:'null'})">針對這${filterTag?'個弱點':'些單字'}練習</button></div>` : ''}`;
+}
+function wsPracticeWeak(tag) {
+  const pool = Object.values(wsWords).filter(w => w.wrong > 0 && (!tag || wsMistakes.some(m=>m.wordId===w.id&&m.tag===tag)));
+  if (!pool.length) { showToast('沒有可練習的單字'); return; }
+  wsQMode = 'review';
+  wsQueue = buildQuestions(pool.slice(0,10), Math.min(pool.length*2, 12), []);
+  wsQIdx = 0; wsSessionMistakes = []; wsSessionRight = 0;
+  renderQuestion();
+}
+
+// ── WORD DETAIL ──
+function renderWordDetail(id) {
+  const w = wsWords[id];
+  if (!w) return;
+  const mist = wsMistakes.filter(m => m.wordId === id);
+  const el = document.getElementById('wsContent');
+  el.innerHTML = `
+    <button class="flash-more-btn" onclick="wsSetMode('${wsMode}')" style="margin-bottom:10px">← 返回</button>
+    <div class="flash-card">
+      <div class="flash-word-row">
+        ${w.part_of_speech==='noun'&&w.article?`<span class="flash-article">${w.article}</span>`:''}
+        <span class="flash-word">${w.german}</span>
+      </div>
+      <div class="flash-meaning">${w.meaning_zh}</div>
+      <div class="flash-chips">
+        <span class="prompt-tag">掌握度 ${w.mastery}%</span>
+        <span class="prompt-tag">答對 ${w.right}</span>
+        <span class="prompt-tag" style="background:var(--red-light);color:var(--red)">答錯 ${w.wrong}</span>
+        ${w.lastReview?`<span class="prompt-tag">上次複習 ${w.lastReview}</span>`:''}
+        ${w.nextReview?`<span class="prompt-tag">下次複習 ${w.nextReview}</span>`:''}
+      </div>
+      <div class="ws-mastery-bar" style="width:100%;height:8px;margin-bottom:14px"><div class="cat-bar-fill" style="width:${w.mastery}%;background:${w.mastery<40?'var(--red)':w.mastery<70?'#E0A800':'var(--green)'}"></div></div>
+      ${(w.examples||[]).length?`<div class="flash-section-label">Beispiele</div>${w.examples.map((e,i)=>`<div class="flash-example">${i+1}. ${e}</div>`).join('')}`:''}
+      ${mist.length?`<div class="flash-section-label">錯誤紀錄</div>${mist.slice(-6).reverse().map(m=>
+        `<div style="font-size:13px;padding:3px 0">· ${m.date} — <span class="trap-badge">${m.tag}</span> 答成「${m.userAns}」（正確：${m.correct}）</div>`).join('')}`:''}
+      ${(w.history||[]).length?`<div class="flash-section-label">最近作答</div><div style="font-size:16px;letter-spacing:3px">${w.history.slice(-10).map(h=>h.ok?'🟢':'🔴').join('')}</div>`:''}
+    </div>
+    <div class="next-row">
+      <button class="next-btn primary" onclick="wsPracticeOne('${id}')">再次練習</button>
+    </div>`;
+}
+function wsPracticeOne(id) {
+  const w = wsWords[id]; if (!w) return;
+  const others = Object.values(wsWords).filter(x=>x.id!==id).slice(0,4);
+  wsQMode = 'review';
+  wsQueue = buildQuestions([w, ...others], 3, []).filter(q=>q.wordId===id).slice(0,3);
+  if (!wsQueue.length) wsQueue = buildQuestions([w,...others], 3, []);
+  wsQIdx = 0; wsSessionMistakes = []; wsSessionRight = 0;
+  renderQuestion();
+}
+
+// ── SIDEBAR VOCAB ──
+function renderSidebarVocab() {
+  const due = dueWords();
+  const el = document.getElementById('dueWords');
+  if (el) el.innerHTML = due.length
+    ? due.slice(0,4).map(w=>`<div style="padding:1px 0">· ${w.german}</div>`).join('') + (due.length>4?`<div style="padding:1px 0;opacity:0.7">…共 ${due.length} 個</div>`:'')
+    : '暫無資料';
+}
+renderSidebarVocab();
 </script>
 </body>
 </html>
