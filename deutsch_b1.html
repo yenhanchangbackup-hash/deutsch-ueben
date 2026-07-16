@@ -1798,22 +1798,28 @@ const SCHREIB_META = {
   teil3: { title: 'Teil 3 — Formelle E-Mail', min: 15, words: 40 }
 };
 
+const SCHREIB_THEMES = {
+  teil1: ['朋友生病或受傷', '朋友搬到新城市或新家', '朋友找到新工作或換工作', '一起計畫的旅行', '生日或慶祝活動的邀請', '你參加了一場婚禮或家庭聚會', '你養了新寵物', '你學了新的嗜好或運動', '你搬進新公寓遇到的問題', '你遺失了重要物品', '朋友的考試或面試結果', '共同朋友要出國一段時間', '你參加了語言課程', '週末的計畫或活動', '你最近看的音樂會或活動'],
+  teil2: ['Gewalt im Fernsehen', 'Handys in der Schule', 'Online-Einkaufen vs. Geschäfte', 'Fast Food und Gesundheit', 'Soziale Medien und Jugendliche', 'Homeoffice', 'Autos in der Innenstadt', 'Computerspiele', 'Haustiere in Mietwohnungen', 'Fernsehen für Kinder', 'Reisen mit dem Flugzeug und Umwelt', 'Einkaufen am Sonntag', 'Schuluniformen', 'Fahrräder in der Stadt', 'Künstliche Intelligenz im Alltag'],
+  teil3: ['老師邀請的活動無法參加', '取消與房東的約定時間', '無法出席語言班的考試需要改期', '感謝主管邀請但無法參加公司活動', '取消醫生或牙醫的預約', '無法參加課程說明會', '感謝邀請但無法出席開幕活動', '需要延後與課程負責人的面談', '無法參加社區活動', '婉拒圖書館志工活動的邀請']
+};
+
 const SCHREIB_SCHEMAS = {
   teil1: `你是 Goethe-Zertifikat B1「Schreiben Teil 1」命題人。請出一道非正式 Email 題目。
-格式範例（仿真題）：朋友 Carsten 因意外骨折住院，你昨天去探望他，現在寫信給另一位也認識 Carsten 的朋友。
-要求：情境貼近日常（生病、搬家、慶祝、旅行計畫、遺失物品等），3 個內容點依序為「Beschreiben Sie（描述）」「Begründen Sie（說明理由）」「Machen Sie einen Vorschlag（提出建議）」。
+題型格式（僅供理解格式，禁止照抄情境）：某情境發生在朋友身上 → 你寫信給另一位也認識他/她的朋友。
+要求：3 個內容點依序為「Beschreiben Sie（描述）」「Begründen Sie（說明理由）」「Machen Sie einen Vorschlag（提出建議）」。人名請自創（多元國際名字），細節要具體。
 只輸出 JSON（不要圍欄）：
 {"situation":"德文情境說明2-3句","punkte":["Beschreiben Sie: …?","Begründen Sie: …?","Machen Sie einen Vorschlag für …."],"situation_zh":"情境的繁體中文翻譯"}`,
   teil2: `你是 Goethe-Zertifikat B1「Schreiben Teil 2」命題人。請出一道表達意見的題目。
-格式：受試者在電視上看了某主題的紀錄片，然後在節目的線上留言板（Gästebuch）看到一則評論，要寫下自己的意見（ca. 80 Wörter）。
-主題須有正反空間（例：Gewalt im Fernsehen、Handys in der Schule、Online-Einkaufen、Fast Food、Soziale Medien）。
+題型格式：受試者在電視上看了指定主題的紀錄片，然後在節目的線上留言板（Gästebuch）看到一則評論，要寫下自己的意見（ca. 80 Wörter）。
+評論要有明確立場並以問句結尾。留言者名字請自創。
 只輸出 JSON（不要圍欄）：
-{"thema":"主題（德文）","intro":"Sie haben im Fernsehen eine Dokumentarsendung zum Thema „…" gesehen. Im Online-Gästebuch der Sendung lesen Sie folgenden Kommentar:","url":"www.report-xxx.de","kommentar":{"name":"名字","zeit":"24.06. 19.25 Uhr","text":"50-70字的德文評論，有明確立場並以問句結尾"},"intro_zh":"情境的繁體中文說明"}`,
+{"thema":"主題（德文）","intro":"Sie haben im Fernsehen eine Dokumentarsendung zum Thema „…" gesehen. Im Online-Gästebuch der Sendung lesen Sie folgenden Kommentar:","url":"www.report-xxx.de","kommentar":{"name":"名字","zeit":"日期時間","text":"50-70字的德文評論"},"intro_zh":"情境的繁體中文說明"}`,
   teil3: `你是 Goethe-Zertifikat B1「Schreiben Teil 3」命題人。請出一道正式 Email 題目。
-格式範例（仿真題）：老師 Herr Möller 邀請你參加八月的國際戲劇聚會，但你那個時間不能參加。寫信給 Herr Möller：致謝、禮貌地致歉、說明你為什麼不能參加。
-要求：對象是老師／主管／房東／課程負責人等，需要正式稱謂（Sehr geehrte/r …）與結尾問候（Mit freundlichen Grüßen）。
+題型格式（僅供理解格式，禁止照抄情境）：某正式對象（老師/主管/房東/課程負責人/醫生診所）給了邀請或約定，你因故無法配合 → 寫信致謝、禮貌致歉、說明原因。
+要求：需要正式稱謂（Sehr geehrte/r …）與結尾問候（Mit freundlichen Grüßen）。對象姓名請自創。
 只輸出 JSON（不要圍欄）：
-{"situation":"德文情境說明2句","aufgabe":"Schreiben Sie an … . Bedanken Sie sich, entschuldigen Sie sich höflich und berichten Sie, warum ….","empfaenger":"Herrn Möller 之類的稱呼","situation_zh":"情境的繁體中文翻譯"}`
+{"situation":"德文情境說明2句","aufgabe":"Schreiben Sie an … . Bedanken Sie sich, entschuldigen Sie sich höflich und berichten Sie, warum ….","empfaenger":"收件人稱呼","situation_zh":"情境的繁體中文翻譯"}`
 };
 
 function showSchreibSelector() {
@@ -1832,8 +1838,16 @@ async function startSchreiben(teil) {
   document.getElementById('feedbackCard').classList.remove('visible');
 
   try {
+    // pick a random theme, avoiding the last few used for this teil
+    const recentKey = 'de_schreib_recent_' + teil;
+    const recent = JSON.parse(localStorage.getItem(recentKey) || '[]');
+    const pool = SCHREIB_THEMES[teil].filter(t => !recent.includes(t));
+    const theme = (pool.length ? pool : SCHREIB_THEMES[teil])[Math.floor(Math.random() * (pool.length ? pool.length : SCHREIB_THEMES[teil].length))];
+    localStorage.setItem(recentKey, JSON.stringify(recent.concat([theme]).slice(-5)));
+
     const weakStr = weaknesses.length ? `\n如可能，設計讓學生需要用到這些文法的情境：${weaknesses.slice(-3).join('、')}` : '';
-    schreibAufgabe = await callClaude(SCHREIB_SCHEMAS[teil] + weakStr, 1200);
+    const varyStr = `\n\n本次指定情境主題：「${theme}」。請圍繞這個主題自創具體情境與人物（每次都要有新的名字、地點、細節）。禁止使用這些最近出過的主題：${recent.join('、') || '無'}。變化編號：${Date.now() % 10000}`;
+    schreibAufgabe = await callClaude(SCHREIB_SCHEMAS[teil] + weakStr + varyStr, 1200);
     document.getElementById('schreibLoading').classList.remove('visible');
     renderAufgabe(teil, schreibAufgabe);
   } catch(e) {
